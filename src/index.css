@@ -1,0 +1,1114 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * SmartForge — Estilos globales para WordPress / Elementor
+ * =========================================================
+ * Desarrollado a partir del diseño Figma exportado.
+ * Fuentes requeridas (agregar en el <head> o via Elementor > Theme Builder):
+ *   https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@500&display=swap
+ *
+ * Estructura de secciones:
+ *   1. Variables (tokens de diseño)
+ *   2. Reset / Base
+ *   3. Header / Navegación
+ *   4. Hero
+ *   5. Análisis de Mercado
+ *   6. Solución (Antes / Después)
+ *   7. Cómo Funciona
+ *   8. Beneficios (Stats Banner)
+ *   9. Para Quién (Cards)
+ *  10. CTA
+ *  11. Formulario (Contact Form 7)
+ *  12. Footer
+ *  13. Componentes reutilizables (botones, badges, divisores)
+ *  14. Responsive
+ */
+
+/* ============================================================
+   1. VARIABLES — Design Tokens
+   ============================================================ */
+:root {
+  /* Colores */
+  --sf-bg:            #050416;
+  --sf-cyan:          #29D9C2;
+  --sf-blue-dark:     #004AAD;
+  --sf-blue-mid:      #0097B2;
+  --sf-orange:        #F99B06;
+  --sf-orange-light:  #F57575;
+  --sf-white:         #FFFFFF;
+  --sf-white-50:      rgba(255, 255, 255, 0.50);
+  --sf-white-25:      rgba(255, 255, 255, 0.25);
+  --sf-white-10:      rgba(255, 255, 255, 0.10);
+  --sf-grey-subtle:   rgba(86, 86, 86, 0.50);
+  --sf-grey-ghost:    rgba(128, 128, 128, 0.08);
+  --sf-shadow-inset:  rgba(217, 217, 217, 0.80);
+
+  /* Gradientes */
+  --sf-grad-primary:  linear-gradient(180deg, #004AAD 0%, #0097B2 31%, #29D9C2 100%);
+  --sf-grad-before:   linear-gradient(90deg, #F99B06 0%, #F99B06 31%, #F57575 100%);
+  --sf-grad-after:    linear-gradient(90deg, #004AAD 0%, #0097B2 31%, #29D9C2 100%);
+
+  /* Tipografía */
+  --sf-font-primary:  'Poppins', sans-serif;
+  --sf-font-secondary:'DM Sans', sans-serif;
+
+  /* Tamaños de fuente */
+  --sf-text-xs:    15px;
+  --sf-text-sm:    18px;
+  --sf-text-md:    20px;
+  --sf-text-lg:    24px;
+  --sf-text-xl:    64px;
+  --sf-text-hero:  65px;
+
+  /* Line-heights */
+  --sf-lh-badge:   30px;
+  --sf-lh-body:    34px;
+  --sf-lh-heading: 75px;
+
+  /* Espaciado de secciones */
+  --sf-px-section: 150px;
+  --sf-px-header:  145px;
+  --sf-py-sm:       80px;
+  --sf-py-lg:      120px;
+
+  /* Bordes */
+  --sf-radius-card:   10px;
+  --sf-radius-btn:    27px;
+  --sf-radius-input:  40px;
+  --sf-radius-nav:    30px;
+}
+
+
+/* ============================================================
+   2. RESET / BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--sf-bg);
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Evita scroll horizontal en pantallas anchas */
+.elementor-section-wrap,
+.elementor-top-section {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+
+/* ============================================================
+   3. HEADER / NAVEGACIÓN
+   ============================================================ */
+.sf-header,
+header.elementor-section,
+.pxl-header-sticky {
+  background-color: var(--sf-bg) !important;
+  height: 96px;
+  padding-left: var(--sf-px-header) !important;
+  padding-right: var(--sf-px-header) !important;
+  display: flex !important;
+  align-items: center;
+}
+
+/* Logo */
+.sf-header .pxl-logo img,
+.sf-header .site-logo img {
+  width: 300px;
+  height: 93px;
+  object-fit: contain;
+  padding: 0 10px;
+}
+
+/* Menú de navegación */
+.sf-header nav ul,
+ul#menu-menu-landing,
+.pxl-nav-menu > ul {
+  background-color: var(--sf-bg);
+  border-radius: var(--sf-radius-nav);
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sf-header nav ul li a,
+ul#menu-menu-landing > li > a,
+.pxl-nav-menu > ul > li > a {
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 500;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding-right: 42px;
+  display: inline-block;
+  transition: color 0.25s ease;
+}
+
+.sf-header nav ul li a:hover,
+ul#menu-menu-landing > li > a:hover {
+  color: var(--sf-cyan);
+}
+
+/* Botón CTA del header */
+.sf-header .sf-btn-primary {
+  margin-left: auto;
+}
+
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+.sf-hero,
+section.elementor-section.sf-section-hero {
+  background-color: var(--sf-bg);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 789px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen decorativa derecha */
+.sf-hero .sf-hero__image {
+  width: 673px;
+  height: 786px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+/* Contenido centrado */
+.sf-hero .sf-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 91px var(--sf-px-section) 0;
+}
+
+/* Título H1 */
+.sf-hero h1,
+.sf-hero .pxl-item--title {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-hero);
+  font-weight: 700;
+  line-height: var(--sf-lh-heading);
+  max-width: 950px;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.sf-hero h1 .sf-text-white { color: var(--sf-white); }
+.sf-hero h1 .sf-text-cyan  { color: var(--sf-cyan);  }
+
+/* Subtítulo / párrafo hero */
+.sf-hero .sf-hero__desc {
+  max-width: 766px;
+  font-size: var(--sf-text-lg);
+  font-weight: 400;
+  line-height: var(--sf-lh-body);
+  text-align: center;
+  margin: 34px auto 0;
+  color: var(--sf-white);
+}
+
+.sf-hero .sf-hero__desc .sf-text-cyan { color: var(--sf-cyan); }
+
+/* Grupo de botones del hero */
+.sf-hero .sf-hero__cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding-bottom: 60px;
+}
+
+
+/* ============================================================
+   5. ANÁLISIS DE MERCADO
+   ============================================================ */
+.sf-section-market,
+section.elementor-section.sf-analisis {
+  background-color: var(--sf-bg);
+  padding: var(--sf-py-sm) var(--sf-px-section) 0;
+  position: relative;
+}
+
+/* Badge de sección (label tipo "[ ANÁLISIS DE MERCADO ]") */
+.sf-section-badge {
+  color: var(--sf-cyan);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-xs);
+  font-weight: 500;
+  line-height: var(--sf-lh-badge);
+  text-transform: capitalize;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Título principal de sección */
+.sf-section-title {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-xl);
+  font-weight: 600;
+  line-height: var(--sf-lh-heading);
+  color: var(--sf-white);
+  text-align: center;
+  margin: 0 0 16px;
+  word-wrap: break-word;
+}
+
+/* Subtítulo / descripción de sección */
+.sf-section-desc {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 500;
+  line-height: var(--sf-lh-body);
+  color: var(--sf-white);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+/* Encabezado de sección (badge + título + desc) */
+.sf-section-header {
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Área de contenido (imagen + estadísticas) */
+.sf-section-market .sf-market__content {
+  padding-top: 40px;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ============================================================
+   6. SOLUCIÓN — Cards "ANTES / DESPUÉS"
+   ============================================================ */
+.sf-section-solution,
+section.elementor-section.sf-solucion {
+  background-color: var(--sf-bg);
+  padding: var(--sf-py-lg) var(--sf-px-section) var(--sf-py-sm);
+  width: 100%;
+  max-width: 1920px;
+}
+
+/* Contenedor de steps */
+.sf-steps-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 46px;
+  padding-bottom: 58px;
+}
+
+/* Card base */
+.sf-step-card {
+  flex: 1;
+  padding: 40px 43px;
+  border-radius: var(--sf-radius-card);
+  box-shadow: 1px 1px 7px 1px var(--sf-shadow-inset) inset;
+  outline: 1px var(--sf-grey-ghost) solid;
+  outline-offset: -1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+/* Card ANTES (naranja) */
+.sf-step-card--before {
+  background: var(--sf-grad-before);
+}
+
+/* Card DESPUÉS (azul/cyan) */
+.sf-step-card--after {
+  background: var(--sf-grad-after);
+}
+
+.sf-step-card__label {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 700;
+  line-height: 18px;
+  color: var(--sf-white);
+  text-align: center;
+}
+
+.sf-step-card__text {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--sf-white);
+  text-align: center;
+}
+
+
+/* ============================================================
+   7. CÓMO FUNCIONA
+   ============================================================ */
+.sf-section-how,
+section.elementor-section.sf-como-funciona {
+  background-color: var(--sf-bg);
+  padding: var(--sf-py-lg) var(--sf-px-section);
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+}
+
+/* Título de sección (variante alineada a la izquierda) */
+.sf-section-how .sf-section-title,
+.sf-section-how h2 {
+  text-align: left;
+  max-width: 948px;
+}
+
+.sf-section-how .sf-section-badge {
+  text-align: left;
+}
+
+/* Contenedor de los pasos (módulos) */
+.sf-how__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Cada paso individual */
+.sf-how__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+/* Número / ícono del paso */
+.sf-how__step-number {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-hero);
+  font-weight: 700;
+  background: var(--sf-grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Contenido textual del paso */
+.sf-how__step-content h3 {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 600;
+  color: var(--sf-white);
+  margin: 0 0 8px;
+}
+
+.sf-how__step-content p {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 400;
+  line-height: var(--sf-lh-body);
+  color: var(--sf-white-50);
+  margin: 0;
+}
+
+
+/* ============================================================
+   8. BENEFICIOS — Stats Banner
+   ============================================================ */
+.sf-section-benefits,
+section.elementor-section.sf-beneficios {
+  background-color: var(--sf-bg);
+  padding: var(--sf-py-sm) 145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+
+/* Banner de estadísticas con gradiente */
+.sf-stats-banner {
+  width: 100%;
+  max-width: 1473px;
+  padding: 31px 129px;
+  background: var(--sf-grad-primary);
+  box-shadow: 0px 13px 46px 1px rgba(131, 131, 131, 0.21) inset;
+  border-radius: 15px;
+  outline: 1px var(--sf-grey-subtle) solid;
+  outline-offset: -1px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 56px;
+}
+
+/* Stat individual */
+.sf-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sf-stat__number {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-hero);
+  font-weight: 700;
+  line-height: 103px;
+  color: var(--sf-white);
+  display: flex;
+  align-items: flex-start;
+}
+
+.sf-stat__label {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-md);
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--sf-white);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Divisor vertical entre stats */
+.sf-stat-divider {
+  width: 1px;
+  height: 75px;
+  background-color: var(--sf-white-50);
+  flex-shrink: 0;
+}
+
+/* Cards de beneficios debajo del banner */
+.sf-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1630px;
+}
+
+.sf-benefit-card {
+  padding: 32px;
+  background-color: var(--sf-bg);
+  box-shadow: 1px 1px 7px 1px var(--sf-shadow-inset) inset;
+  border-radius: var(--sf-radius-card);
+  outline: 1px var(--sf-grey-ghost) solid;
+  outline-offset: -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sf-benefit-card__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.sf-benefit-card__title {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 600;
+  color: var(--sf-white);
+  margin: 0;
+}
+
+.sf-benefit-card__text {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--sf-white-50);
+  margin: 0;
+}
+
+
+/* ============================================================
+   9. PARA QUIÉN — Cards con ícono SVG
+   ============================================================ */
+.sf-section-who,
+section.elementor-section.sf-para-quien {
+  background-color: var(--sf-bg);
+  padding: 0 var(--sf-px-section) 160px;
+}
+
+/* Divisor superior de sección */
+.sf-section-divider {
+  width: 100%;
+  max-width: 1620px;
+  height: 1px;
+  border: none;
+  border-top: 1px var(--sf-grey-subtle) solid;
+  margin: 0 0 60px;
+}
+
+/* Grid de cards */
+.sf-who-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Card individual */
+.sf-who-card {
+  flex: 1;
+  min-width: 280px;
+  padding: 32px;
+  background-color: var(--sf-bg);
+  box-shadow: 1px 1px 7px 1px var(--sf-shadow-inset) inset;
+  border-radius: var(--sf-radius-card);
+  outline: 1px var(--sf-grey-ghost) solid;
+  outline-offset: -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Ícono del card */
+.sf-who-card__icon {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+}
+
+/* Título del card */
+.sf-who-card__title {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 600;
+  color: var(--sf-white);
+  margin: 0;
+}
+
+/* Lista de ítems dentro del card */
+.sf-who-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sf-who-card ul li {
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--sf-white-50);
+  padding-left: 20px;
+  position: relative;
+}
+
+.sf-who-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sf-grad-primary);
+}
+
+
+/* ============================================================
+   10. CTA — Llamada a la acción
+   ============================================================ */
+.sf-section-cta,
+section.elementor-section.sf-cta {
+  background-color: var(--sf-bg);
+  height: 535px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sf-section-cta .sf-section-title {
+  text-align: center;
+  max-width: 848px;
+}
+
+.sf-section-cta .sf-section-title .sf-text-cyan {
+  color: var(--sf-cyan);
+}
+
+.sf-section-cta .sf-cta__desc {
+  max-width: 892px;
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-lg);
+  font-weight: 500;
+  line-height: var(--sf-lh-body);
+  color: var(--sf-white);
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.sf-section-cta .sf-cta__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+/* ============================================================
+   11. FORMULARIO — Contact Form 7
+   ============================================================ */
+.sf-section-form,
+section.elementor-section.sf-formulario {
+  background-color: var(--sf-bg);
+  padding: 0 var(--sf-px-section) var(--sf-py-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Contenedor del formulario */
+.wpcf7-form,
+.sf-contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Campos de texto del formulario */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.sf-input {
+  width: 450px;
+  height: 50px;
+  padding: 14px 120px 14px 23px;
+  border-radius: var(--sf-radius-input);
+  border: none;
+  outline: 1px var(--sf-white-25) solid;
+  background: transparent;
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 400;
+  line-height: 18px;
+  transition: outline 0.2s ease;
+  display: block;
+}
+
+/* Placeholder */
+.wpcf7-form input::placeholder,
+.sf-input::placeholder {
+  color: var(--sf-white);
+  opacity: 1;
+}
+
+/* Campo activo / foco */
+.wpcf7-form input:focus,
+.sf-input:focus {
+  outline: 4px var(--sf-blue-dark) solid;
+  outline-offset: -4px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Botón de envío del formulario */
+.wpcf7-form input[type="submit"],
+.wpcf7-submit {
+  width: 450px;
+  height: 55px;
+  border: none;
+  border-radius: var(--sf-radius-btn);
+  background: var(--sf-grad-primary);
+  outline: 3px var(--sf-cyan) solid;
+  outline-offset: -3px;
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.15s ease;
+  margin-top: 8px;
+}
+
+.wpcf7-form input[type="submit"]:hover,
+.wpcf7-submit:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Mensajes de respuesta CF7 */
+.wpcf7-response-output {
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  font-size: 14px;
+  border: 1px var(--sf-white-25) solid !important;
+  border-radius: 8px;
+  padding: 10px 16px !important;
+  margin-top: 10px !important;
+  width: 450px;
+  text-align: center;
+}
+
+.wpcf7 .wpcf7-not-valid-tip {
+  color: var(--sf-orange-light);
+  font-size: 13px;
+  font-family: var(--sf-font-primary);
+}
+
+
+/* ============================================================
+   12. FOOTER
+   ============================================================ */
+.sf-footer,
+footer.elementor-section,
+.pxl-border-section-anm {
+  background-color: var(--sf-bg);
+  padding: 20px var(--sf-px-section);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Línea superior del footer */
+.sf-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--sf-px-section);
+  right: var(--sf-px-section);
+  height: 1px;
+  background-color: var(--sf-white-10);
+}
+
+/* Logo en el footer */
+.sf-footer .sf-footer__logo img {
+  width: 300px;
+  height: 93px;
+  object-fit: contain;
+  padding: 0 10px;
+}
+
+/* Texto de crédito */
+.sf-footer__credit {
+  font-family: var(--sf-font-secondary);
+  font-size: var(--sf-text-lg);
+  font-weight: 500;
+  line-height: var(--sf-lh-body);
+  color: var(--sf-white);
+}
+
+.sf-footer__credit span,
+.sf-footer__credit .sf-text-cyan {
+  color: var(--sf-cyan);
+}
+
+/* Links del footer */
+.sf-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sf-footer__links a {
+  font-family: var(--sf-font-secondary);
+  font-size: var(--sf-text-lg);
+  font-weight: 500;
+  line-height: var(--sf-lh-body);
+  color: var(--sf-white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sf-footer__links a:hover {
+  color: var(--sf-cyan);
+}
+
+
+/* ============================================================
+   13. COMPONENTES REUTILIZABLES
+   ============================================================ */
+
+/* --- Botón primario (gradiente azul → cyan) --- */
+.sf-btn-primary,
+.pxl--btn.pxl--btn-style1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 72px 0 30px;
+  height: 55px;
+  background: var(--sf-grad-primary);
+  border-radius: var(--sf-radius-btn);
+  outline: 3px var(--sf-cyan) solid;
+  outline-offset: -3px;
+  border: none;
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.sf-btn-primary:hover,
+.pxl--btn.pxl--btn-style1:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  color: var(--sf-white);
+  text-decoration: none;
+}
+
+/* --- Botón secundario (outline) --- */
+.sf-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  height: 55px;
+  background: transparent;
+  border-radius: var(--sf-radius-btn);
+  outline: 2px var(--sf-white-25) solid;
+  outline-offset: -2px;
+  border: none;
+  color: var(--sf-white);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: outline-color 0.25s ease, color 0.25s ease;
+}
+
+.sf-btn-secondary:hover {
+  outline-color: var(--sf-cyan);
+  color: var(--sf-cyan);
+}
+
+/* --- Badge de sección (reutilizable) --- */
+.sf-badge {
+  display: inline-flex;
+  align-items: center;
+  color: var(--sf-cyan);
+  font-family: var(--sf-font-primary);
+  font-size: var(--sf-text-xs);
+  font-weight: 500;
+  line-height: var(--sf-lh-badge);
+  text-transform: capitalize;
+}
+
+/* --- Divisor decorativo con ícono rombo --- */
+.sf-divider-ornament {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.sf-divider-ornament::after {
+  content: '';
+  display: block;
+  width: 118px;
+  height: 1px;
+  background: linear-gradient(90deg, #FAFAFA 0%, rgba(244, 244, 254, 0) 100%);
+}
+
+/* --- Ícono SVG con gradiente (íconos de cards) --- */
+.sf-icon-gradient stop:first-child { stop-color: var(--sf-blue-dark); }
+.sf-icon-gradient stop:nth-child(2) { stop-color: var(--sf-blue-mid); }
+.sf-icon-gradient stop:last-child  { stop-color: var(--sf-cyan); }
+
+
+/* ============================================================
+   14. RESPONSIVE
+   ============================================================ */
+
+/* --- Tablet grande (1280px) --- */
+@media (max-width: 1280px) {
+  :root {
+    --sf-px-section: 80px;
+    --sf-px-header:  60px;
+    --sf-text-xl:    48px;
+    --sf-text-hero:  48px;
+    --sf-lh-heading: 58px;
+  }
+
+  .sf-stats-banner {
+    padding: 24px 40px;
+    gap: 32px;
+  }
+
+  .sf-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sf-who-grid {
+    flex-wrap: wrap;
+  }
+
+  .sf-hero .sf-hero__image {
+    width: 400px;
+    height: auto;
+    opacity: 0.5;
+  }
+}
+
+/* --- Tablet (1024px) --- */
+@media (max-width: 1024px) {
+  :root {
+    --sf-px-section: 48px;
+    --sf-px-header:  40px;
+    --sf-text-xl:    40px;
+    --sf-text-hero:  40px;
+    --sf-lh-heading: 50px;
+    --sf-py-sm:      60px;
+    --sf-py-lg:       80px;
+  }
+
+  .sf-header nav ul li a {
+    padding-right: 24px;
+  }
+
+  .sf-steps-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sf-stats-banner {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .sf-section-cta {
+    height: auto;
+    padding: var(--sf-py-sm) var(--sf-px-section);
+  }
+}
+
+/* --- Móvil (767px) --- */
+@media (max-width: 767px) {
+  :root {
+    --sf-px-section: 24px;
+    --sf-px-header:  20px;
+    --sf-text-xl:    32px;
+    --sf-text-hero:  32px;
+    --sf-lh-heading: 42px;
+    --sf-text-lg:    18px;
+    --sf-py-sm:      48px;
+    --sf-py-lg:      60px;
+  }
+
+  /* Header */
+  .sf-header,
+  .pxl-header-sticky {
+    height: auto;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* Menú colapsado — la implementación depende del tema/plugin */
+  .sf-header nav {
+    display: none; /* Mostrar con JS/hamburger del tema */
+  }
+
+  /* Hero */
+  .sf-hero {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .sf-hero .sf-hero__image {
+    display: none;
+  }
+
+  .sf-hero h1 {
+    max-width: 100%;
+  }
+
+  /* Formulario */
+  .wpcf7-form input[type="text"],
+  .wpcf7-form input[type="email"],
+  .wpcf7-form input[type="tel"],
+  .sf-input,
+  .wpcf7-form input[type="submit"],
+  .wpcf7-submit,
+  .wpcf7-response-output {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  /* Stats */
+  .sf-stat__number {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  /* Cards */
+  .sf-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-who-grid {
+    flex-direction: column;
+  }
+
+  /* Footer */
+  .sf-footer,
+  .pxl-border-section-anm {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .sf-footer::before {
+    left: var(--sf-px-section);
+    right: var(--sf-px-section);
+  }
+}
