@@ -15,7 +15,7 @@ const ContactFormSection = () => {
       if (window.location.hash === "#formulario") {
         setTimeout(() => {
           nameInputRef.current?.focus()
-        }, 500)
+        }, 8000)
       }
     }
 

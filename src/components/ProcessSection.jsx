@@ -25,7 +25,10 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section
+      id="como-funciona"
+      className="py-32 relative overflow-hidden"
+    >
 
       <div className="max-w-[1300px] mx-auto px-6">
 
@@ -59,14 +62,17 @@ const ProcessSection = () => {
               "
             >
 
+              {/* número */}
               <div className="flex items-center justify-center w-10 h-10 rounded-full border border-cyan-400 text-cyan-400 font-semibold mb-4">
                 {step.id}
               </div>
 
+              {/* título */}
               <h3 className="text-white font-semibold text-lg mb-3">
                 {step.title}
               </h3>
 
+              {/* texto */}
               <p className="text-gray-300 text-sm leading-relaxed">
                 {step.text}
               </p>

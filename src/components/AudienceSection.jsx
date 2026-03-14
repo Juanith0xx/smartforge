@@ -34,7 +34,10 @@ const cards = [
 
 const AudienceSection = () => {
   return (
-    <section className="py-12 relative overflow-hidden">
+    <section
+      id="para-quien"
+      className="py-12 relative overflow-hidden"
+    >
 
       <div className="max-w-[1300px] mx-auto px-6">
 
