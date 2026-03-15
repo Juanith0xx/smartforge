@@ -7,25 +7,35 @@ import MarketAnalysisSection from './components/MarketAnalysisSection'
 import ModulesSection from './components/ModulesSelection'
 import ProcessSection from './components/ProcessSection'
 import ResultsSection from './components/ResultsSection'
+import ScrollToTopButton from './components/ScrollToTopButton'
+
 import './index.css'
 
 function App() {
   return (
-    // Usamos el background definido en tus variables
     <div style={{ backgroundColor: 'var(--sf-bg)', minHeight: '100vh' }}>
-      <Header />
-      <Hero />
-      <ModulesSection />
-      <ProcessSection />
-      <ResultsSection />
-      <MarketAnalysisSection />
-      <AudienceSection />
-      <FinalCTASection />
-      <ContactFormSection />
-      
-      <main>
 
-      </main>
+      <Header />
+
+      <Hero />
+
+      <ModulesSection />
+
+      <ProcessSection />
+
+      <ResultsSection />
+
+      <MarketAnalysisSection />
+
+      <AudienceSection />
+
+      <FinalCTASection />
+
+      <ContactFormSection />
+
+      {/* BOTÓN SCROLL TOP */}
+      <ScrollToTopButton />
+
     </div>
   )
 }

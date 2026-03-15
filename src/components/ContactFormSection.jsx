@@ -9,13 +9,12 @@ const ContactFormSection = () => {
 
   const nameInputRef = useRef(null)
 
-  // foco automático cuando se llega al formulario
   useEffect(() => {
     const handleHash = () => {
       if (window.location.hash === "#formulario") {
         setTimeout(() => {
           nameInputRef.current?.focus()
-        }, 8000)
+        }, 800)
       }
     }
 
@@ -28,7 +27,7 @@ const ContactFormSection = () => {
   return (
     <section
       id="formulario"
-      className="py-16 relative bg-cover bg-center"
+      className="py-16 md:py-24 relative bg-cover bg-center"
       style={{ backgroundImage: `url(${bgGrid})` }}
     >
 
@@ -36,20 +35,20 @@ const ContactFormSection = () => {
 
         {/* ICONO SUPERIOR */}
         <div className="flex justify-center mb-6">
-          <img src={topIcon} className="w-20 h-20" alt="" />
+          <img src={topIcon} className="w-16 h-16 md:w-20 md:h-20" alt="" />
         </div>
 
         {/* TITULO */}
-        <h2 className="!text-5xl md:text-5xl font-bold text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
           Solicita tu demo hoy
         </h2>
 
-        <p className="text-gray-300 mt-3">
+        <p className="text-gray-300 mt-3 text-sm md:text-base">
           Completa el formulario y te contactaremos para acelerar tu negocio
         </p>
 
         {/* CONTENEDOR */}
-        <div className="grid md:grid-cols-2 gap-12 mt-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 md:mt-16 items-center">
 
           {/* FORMULARIO */}
           <form className="space-y-4 text-left">
@@ -58,29 +57,39 @@ const ContactFormSection = () => {
               ref={nameInputRef}
               type="text"
               placeholder="Nombre"
-              className="w-full px-5 py-3 rounded-full bg-transparent border border-cyan-400 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-cyan-400 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <input
               type="text"
               placeholder="Empresa"
-              className="w-full px-5 py-3 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <input
               type="text"
               placeholder="Cargo"
-              className="w-full px-5 py-3 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <input
               type="email"
               placeholder="Email corporativo"
-              className="w-full px-5 py-3 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <button
-              className="w-full mt-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-teal-400 shadow-[0_0_25px_rgba(34,211,238,0.45)] hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,211,238,0.65)] transition-all duration-300"
+              className="
+              w-full mt-6 py-3 md:py-4
+              rounded-full
+              text-white font-semibold
+              text-sm md:text-base
+              bg-gradient-to-r from-cyan-500 to-teal-400
+              shadow-[0_0_25px_rgba(34,211,238,0.45)]
+              hover:scale-[1.03]
+              hover:shadow-[0_0_35px_rgba(34,211,238,0.65)]
+              transition-all duration-300
+              "
             >
               LA QUIERO
             </button>
@@ -88,11 +97,11 @@ const ContactFormSection = () => {
           </form>
 
           {/* LOGO LADO DERECHO */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center mt-6 md:mt-0">
 
             <img
               src={logo}
-              className="w-56 mb-4"
+              className="w-40 md:w-56 mb-4"
               alt=""
             />
 
@@ -107,13 +116,13 @@ const ContactFormSection = () => {
       </div>
 
       {/* FOOTER */}
-      <div className="mt-24 border-t border-white/10 pt-6 px-6">
+      <div className="mt-20 md:mt-24 border-t border-white/10 pt-6 px-6">
 
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-300">
+        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-300 text-center md:text-left">
 
           {/* logo izquierda */}
           <div className="flex items-center gap-3">
-            <img src={logoHorizontal} className="w-60" alt="SmartForge" />
+            <img src={logoHorizontal} className="w-40 md:w-60" alt="SmartForge" />
           </div>
 
           {/* centro */}
