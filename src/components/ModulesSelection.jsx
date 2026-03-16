@@ -82,11 +82,24 @@ const modules = [
 ]
 
 const ModulesSection = () => {
-  // Ordenar para móvil: Suite Full primero, luego el resto por orden de ID
   const mobileModules = [
     ...modules.filter(m => m.id === 3),
     ...modules.filter(m => m.id !== 3).sort((a, b) => a.id - b.id)
   ];
+
+  // Componente interno para manejar el título con el degradado en "Forge"
+  const StyledTitle = ({ text, isMobile = false }) => {
+    const parts = text.split("Forge");
+    return (
+      <h3 className={`text-white font-semibold ${isMobile ? 'text-lg' : 'text-lg xl:text-xl'} mb-2 leading-tight whitespace-nowrap`}>
+        <span className="text-white italic">Smart</span>
+        <span className="bg-gradient-to-r from-[#ffae00] via-[#70a444] via-[#22d3ee] to-[#6366f1] bg-clip-text text-transparent italic">
+          Forge
+        </span>
+        <span className="ml-2">{parts[1]}</span>
+      </h3>
+    );
+  };
 
   return (
     <section id="que-es" className="relative text-center overflow-hidden py-16 bg-[#030b1a]">
@@ -96,13 +109,11 @@ const ModulesSection = () => {
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4">
           [ QUÉ ES SMARTFORGE ]
         </p>
-
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
           Cinco módulos.
           <br />
           Un solo flujo.
         </h2>
-
         <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-6">
           Desde el diseño arquitectónico hasta el despliegue en producción,
           SmartForge cubre cada etapa del ciclo de desarrollo con IA y
@@ -122,7 +133,6 @@ const ModulesSection = () => {
       {/* CONTENEDOR DE MÓDULOS */}
       <div className="relative flex flex-col items-center lg:-mt-24 min-h-[600px] lg:min-h-[800px] justify-center">
 
-        {/* IMAGEN CENTRAL */}
         <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none">
           <img
             src={modulesImage}
@@ -132,7 +142,7 @@ const ModulesSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030b1a]/20 to-[#030b1a] pointer-events-none" />
         </div>
 
-        {/* RENDERIZADO DE CARDS (Desktop) - Se mantiene el orden original para posicionamiento absolute */}
+        {/* RENDERIZADO DE CARDS (Desktop) */}
         <div className="hidden lg:block w-full h-full absolute inset-0 z-20">
           {modules.map((card) => {
             const Icon = card.icon;
@@ -159,10 +169,8 @@ const ModulesSection = () => {
                   </span>
                 </div>
 
-                <h3 className="text-white font-semibold text-lg mb-2 leading-tight whitespace-nowrap">
-                  <span className="text-cyan-400 italic mr-2">SmartForge</span>
-                  {card.title.replace("SmartForge ", "")}
-                </h3>
+                {/* Título Estilizado con degradado en Forge */}
+                <StyledTitle text={card.title} />
 
                 <p className="text-gray-200 text-sm leading-relaxed mb-4 opacity-95">
                   {card.description}
@@ -181,7 +189,7 @@ const ModulesSection = () => {
           })}
         </div>
 
-        {/* GRID MOBILE - REORDENADO (Suite Full Primero) */}
+        {/* GRID MOBILE */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 mt-12 lg:hidden relative z-20 w-full">
           {mobileModules.map((card) => {
             const Icon = card.icon;
@@ -191,10 +199,10 @@ const ModulesSection = () => {
                   <span className="px-2 py-0.5 rounded-full bg-cyan-400 text-black text-[9px] font-bold uppercase">{card.module}</span>
                   <Icon size={28} className="text-cyan-400" />
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-2">
-                  <span className="text-cyan-400 italic block text-xs">SmartForge</span>
-                  {card.title.replace("SmartForge ", "")}
-                </h3>
+                
+                {/* Título Estilizado Mobile */}
+                <StyledTitle text={card.title} isMobile={true} />
+
                 <p className="text-gray-200 text-sm leading-relaxed mb-4">{card.description}</p>
                 <ul className="space-y-2 border-t border-white/10 pt-4">
                   {card.items.map((item, i) => (
