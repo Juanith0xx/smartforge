@@ -17,7 +17,7 @@ const Header = () => {
           href="https://smartjob.cl/" 
           className="z-[130] transition-all duration-300 hover:opacity-80 active:scale-95"
         >
-          <img src={logo} alt="SmartForge" className="h-7 w-auto object-contain" />
+          <img src={logo} alt="SmartForge" className="h-20 w-auto object-contain" />
         </a>
 
         {/* BOTÓN HAMBURGUESA - Siempre a la derecha en móvil */}
