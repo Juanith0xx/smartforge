@@ -12,12 +12,15 @@ const Header = () => {
       {/* HEADER PRINCIPAL */}
       <header className="sf-header font-[Poppins] fixed top-0 left-0 w-full z-[120] bg-[#020617]/90 backdrop-blur-md border-b border-white/5 px-6 py-4 flex items-center justify-between">
         
-        {/* LOGO */}
-        <a href="#" className="z-[130]">
+        {/* LOGO - REDIRECCIÓN A SMARTJOB EN LA MISMA PESTAÑA */}
+        <a 
+          href="https://smartjob.cl/" 
+          className="z-[130] transition-all duration-300 hover:opacity-80 active:scale-95"
+        >
           <img src={logo} alt="SmartForge" className="h-7 w-auto object-contain" />
         </a>
 
-        {/* BOTÓN HAMBURGUESA - Siempre a la derecha */}
+        {/* BOTÓN HAMBURGUESA - Siempre a la derecha en móvil */}
         <button 
           onClick={toggleMenu}
           className="lg:hidden z-[130] text-white p-2 focus:outline-none transition-transform active:scale-90"
@@ -50,7 +53,6 @@ const Header = () => {
         {/* CONTENIDO DEL MENÚ */}
         <nav className="flex-grow flex flex-col items-center justify-center px-8">
           <ul className="w-full flex flex-col gap-6 text-center">
-            {/* Los enlaces ahora tienen un borde sutil para separarlos */}
             <li>
               <a href="#que-es" onClick={toggleMenu} className="block py-4 text-2xl text-white font-medium border-b border-white/5">
                 Qué es SmartForge
@@ -67,7 +69,7 @@ const Header = () => {
               </a>
             </li>
             
-            {/* CTA dentro del menú móvil */}
+            {/* CTA Móvil */}
             <li className="mt-8">
               <a 
                 href="#formulario" 
@@ -86,7 +88,7 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Espaciador para que el contenido de la página no empiece debajo del header fijo */}
+      {/* Espaciador para evitar que el contenido se oculte tras el header fijo */}
       <div className="h-16 lg:h-20"></div>
     </>
   );
