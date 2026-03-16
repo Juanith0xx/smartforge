@@ -27,28 +27,28 @@ const features = [
 
 const ResultsSection = () => {
   return (
-    <section className="py-10 relative overflow-hidden min-h-[900px]">
+    <section className="py-16 md:py-24 relative overflow-hidden min-h-screen flex flex-col justify-center">
 
       {/* CONTENIDO */}
       <div className="max-w-[1300px] mx-auto px-6 text-center relative z-10">
 
-        <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6">
+        <p className="text-cyan-400 text-[10px] md:text-xs tracking-[0.35em] uppercase mb-4 md:mb-6">
           [ SOLUCIÓN ]
         </p>
 
-        <h2 className="!text-5xl md:text-6xl font-bold text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight">
           Resultados concretos.
-          <br />
-          Desde el primer sprint.
+          <br className="hidden sm:block" />
+          <span className="text-white/90"> Desde el primer sprint.</span>
         </h2>
 
-        <p className="mt-6 text-gray-300 text-lg max-w-2xl mx-auto">
+        <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           SmartForge no reemplaza a tu equipo: lo potencia.
           La IA supervisada con expertos garantizan coherencia y calidad en cada etapa.
         </p>
 
-        {/* CARDS */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        {/* CARDS GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-20">
 
           {features.map((feature, i) => {
             const Icon = feature.icon
@@ -57,27 +57,33 @@ const ResultsSection = () => {
               <div
                 key={i}
                 className="
-                p-6
-                rounded-xl
+                p-6 md:p-8
+                rounded-2xl
                 border border-white/10
-                bg-black/40
-                backdrop-blur-sm
-                hover:border-cyan-400
-                hover:shadow-[0_0_25px_rgba(34,211,238,0.35)]
-                transition
+                /* MEJORA: Gradiente responsivo aplicado aquí */
+                bg-gradient-to-br from-[#0b1b2b] via-[#0b1b2b] to-[#122d42]
+                lg:bg-none lg:bg-white/[0.03] 
+                
+                backdrop-blur-md
+                hover:border-cyan-400/50
+                hover:bg-white/[0.06]
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
+                transition-all duration-300
                 text-left
+                group
+                active:scale-[0.98] lg:active:scale-100
                 "
               >
 
-                <div className="w-12 h-12 rounded-full border border-cyan-400 flex items-center justify-center text-cyan-400 mb-4">
-                  <Icon size={20} />
+                <div className="w-12 h-12 rounded-xl border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-400 group-hover:text-black transition-all duration-300">
+                  <Icon size={22} />
                 </div>
 
-                <h3 className="text-white font-semibold mb-2">
+                <h3 className="text-white font-bold text-lg mb-3">
                   {feature.title}
                 </h3>
 
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
                   {feature.text}
                 </p>
 
@@ -90,20 +96,18 @@ const ResultsSection = () => {
       </div>
 
       {/* SCROLL DOWN */}
-      <div className="absolute bottom-[100px] left-1/2 -translate-x-1/2 text-center text-gray-300 text-xs tracking-widest z-10">
-        <div className="text-lg mb-1">◦</div>
-        SCROLLDOWN
+      <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-gray-500 text-[10px] tracking-[0.4em] z-10 uppercase">
+        <div className="animate-bounce mb-2 text-cyan-400">◦</div>
+        Scroll
       </div>
 
       {/* CURVA LUMINOSA */}
-      <div className="absolute bottom-[-750px] left-1/2 -translate-x-1/2 w-[2400px] pointer-events-none">
-
+      <div className="absolute bottom-[-200px] md:bottom-[-600px] lg:bottom-[-750px] left-1/2 -translate-x-1/2 w-[150%] md:w-[2400px] pointer-events-none opacity-50 md:opacity-90">
         <img
           src={glowCurve}
-          alt="Glow"
-          className="w-full opacity-90 blur-[1px] scale-110"
+          alt="Glow Decoration"
+          className="w-full blur-[2px] md:blur-[1px]"
         />
-
       </div>
 
     </section>

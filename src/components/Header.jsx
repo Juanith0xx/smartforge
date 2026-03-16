@@ -1,29 +1,94 @@
-import React from 'react';
-// Importamos el logo
+import React, { useState } from 'react';
 import logo from '../assets/images/smartforge-logo.png';
+import { Menu, X } from 'lucide-react'; 
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <header className="sf-header font-[Poppins]">
-      {/* Logo */}
-      <a href="#" className="pxl-logo">
-        <img src={logo} alt="SmartForge" />
-      </a>
+    <>
+      {/* HEADER PRINCIPAL */}
+      <header className="sf-header font-[Poppins] fixed top-0 left-0 w-full z-[120] bg-[#020617]/90 backdrop-blur-md border-b border-white/5 px-6 py-4 flex items-center justify-between">
+        
+        {/* LOGO */}
+        <a href="#" className="z-[130]">
+          <img src={logo} alt="SmartForge" className="h-7 w-auto object-contain" />
+        </a>
 
-      {/* Navegación */}
-      <nav>
-        <ul id="menu-menu-landing">
-          <li><a href="#que-es">Qué es SmartForge</a></li>
-          <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="#para-quien">Para quién</a></li>
-        </ul>
-      </nav>
+        {/* BOTÓN HAMBURGUESA - Siempre a la derecha */}
+        <button 
+          onClick={toggleMenu}
+          className="lg:hidden z-[130] text-white p-2 focus:outline-none transition-transform active:scale-90"
+        >
+          {isOpen ? (
+            <X size={28} className="text-cyan-400" />
+          ) : (
+            <Menu size={28} className="text-white" />
+          )}
+        </button>
 
-      {/* CTA Header */}
-      <a href="#formulario" className="sf-btn-secondary font-[Poppins]">
-        Habla con un Experto
-      </a>
-    </header>
+        {/* NAVEGACIÓN DESKTOP */}
+        <nav className="hidden lg:flex items-center gap-8">
+          <ul className="flex gap-8">
+            <li><a href="#que-es" className="text-sm text-white hover:text-cyan-400 transition-colors">Qué es SmartForge</a></li>
+            <li><a href="#como-funciona" className="text-sm text-white hover:text-cyan-400 transition-colors">Cómo funciona</a></li>
+            <li><a href="#para-quien" className="text-sm text-white hover:text-cyan-400 transition-colors">Para quién</a></li>
+          </ul>
+          <a href="#formulario" className="sf-btn-secondary ml-6 text-sm">Habla con un Experto</a>
+        </nav>
+      </header>
+
+      {/* OVERLAY DEL MENÚ MÓVIL */}
+      <div className={`
+        fixed inset-0 z-[110] lg:hidden bg-[#020617]
+        flex flex-col transition-all duration-500 ease-in-out
+        ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+      `}>
+        
+        {/* CONTENIDO DEL MENÚ */}
+        <nav className="flex-grow flex flex-col items-center justify-center px-8">
+          <ul className="w-full flex flex-col gap-6 text-center">
+            {/* Los enlaces ahora tienen un borde sutil para separarlos */}
+            <li>
+              <a href="#que-es" onClick={toggleMenu} className="block py-4 text-2xl text-white font-medium border-b border-white/5">
+                Qué es SmartForge
+              </a>
+            </li>
+            <li>
+              <a href="#como-funciona" onClick={toggleMenu} className="block py-4 text-2xl text-white font-medium border-b border-white/5">
+                Cómo funciona
+              </a>
+            </li>
+            <li>
+              <a href="#para-quien" onClick={toggleMenu} className="block py-4 text-2xl text-white font-medium border-b border-white/5">
+                Para quién
+              </a>
+            </li>
+            
+            {/* CTA dentro del menú móvil */}
+            <li className="mt-8">
+              <a 
+                href="#formulario" 
+                onClick={toggleMenu} 
+                className="block w-full py-5 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400 text-white font-bold text-lg shadow-[0_10px_25px_rgba(34,211,238,0.3)]"
+              >
+                Solicita una Demo
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* FOOTER DEL MENÚ */}
+        <div className="pb-12 text-center">
+           <p className="text-gray-500 text-[10px] tracking-[0.3em] uppercase">SmartForge · IA Supervision</p>
+        </div>
+      </div>
+      
+      {/* Espaciador para que el contenido de la página no empiece debajo del header fijo */}
+      <div className="h-16 lg:h-20"></div>
+    </>
   );
 };
 
