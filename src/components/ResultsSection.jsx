@@ -102,7 +102,7 @@ const ResultsSection = () => {
       </div>
 
       {/* CURVA LUMINOSA */}
-      <div className="absolute bottom-[-200px] md:bottom-[-600px] lg:bottom-[-750px] left-1/2 -translate-x-1/2 w-[150%] md:w-[2400px] pointer-events-none opacity-50 md:opacity-90">
+      <div className="absolute bottom-[-200px] md:bottom-[-600px] lg:bottom-[-750px] left-1/2 -translate-x-1/2 w-[150%] md:w-[2200px] pointer-events-none opacity-50 md:opacity-90">
         <img
           src={glowCurve}
           alt="Glow Decoration"

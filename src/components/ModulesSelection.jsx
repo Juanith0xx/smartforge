@@ -1,12 +1,21 @@
 import React from "react"
 import modulesImage from "../assets/images/modulo.png"
+import { 
+  Layers, 
+  ClipboardCheck, 
+  Box, 
+  Code2, 
+  ShieldCheck 
+} from "lucide-react"
 
 const modules = [
   {
     id: 1,
     title: "SmartForge Arquitectura",
     module: "MÓDULO 1",
-    position: "lg:left-[5%] lg:bottom-[25%]",
+    icon: Layers,
+    position: "lg:left-[2%] lg:bottom-[10%]",
+    description: "Diagramas el roadmap técnico preciso para tu desarollo. Define los componentes, flujos de datos e integraciones.",
     items: [
       "Diseño de componentes y microservicios",
       "Modelado de datos y APIs",
@@ -18,7 +27,9 @@ const modules = [
     id: 2,
     title: "SmartForge Planificación",
     module: "MÓDULO 2",
-    position: "lg:left-[10%] lg:top-[10%]",
+    icon: ClipboardCheck,
+    position: "lg:left-[5%] lg:top-[5%]",
+    description: "Convierte objetivos de negocio en un plan ejecutable. Define alcance, genera historias de usuarios y backlog.",
     items: [
       "Definición de objetivo y alcance",
       "Generación automática de historias de usuario",
@@ -30,7 +41,9 @@ const modules = [
     id: 3,
     title: "SmartForge Suite Full",
     module: "SUITE COMPLETA",
-    position: "lg:left-1/2 lg:top-[35%] lg:-translate-x-1/2",
+    icon: Box,
+    position: "lg:left-1/2 lg:top-[22%] lg:-translate-x-1/2",
+    description: "La solucíon integrada. Todos los módulos conectados en un solo flujo continuo de extremo a extremo.",
     items: [
       "Integración completa de todos los módulos",
       "Dashboard unificado de avance y métricas",
@@ -42,7 +55,9 @@ const modules = [
     id: 4,
     title: "SmartForge Desarrollo",
     module: "MÓDULO 3",
-    position: "lg:right-[10%] lg:top-[8%]",
+    icon: Code2,
+    position: "lg:right-[5%] lg:top-[5%]",
+    description: "Acelera la implementacion con IA que entiende el contexto de negocio. Refactoriza e implementa con consistencia.",
     items: [
       "Generación y asistencia de código con IA",
       "Refactorización y deuda técnica controlada",
@@ -54,7 +69,9 @@ const modules = [
     id: 5,
     title: "SmartForge QA",
     module: "MÓDULO 4",
-    position: "lg:right-[5%] lg:bottom-[25%]",
+    icon: ShieldCheck,
+    position: "lg:right-[2%] lg:bottom-[10%]",
+    description: "Automatiza la validación, los pipelines de CI/CD y los despligues. Trazabilidad completa hasta produccion.",
     items: [
       "Automatización de pruebas end-to-end",
       "Pipelines de CI/CD configurados",
@@ -65,16 +82,22 @@ const modules = [
 ]
 
 const ModulesSection = () => {
+  // Ordenar para móvil: Suite Full primero, luego el resto por orden de ID
+  const mobileModules = [
+    ...modules.filter(m => m.id === 3),
+    ...modules.filter(m => m.id !== 3).sort((a, b) => a.id - b.id)
+  ];
+
   return (
-    <section id="que-es" className="relative text-center overflow-hidden mt-8 py-12">
+    <section id="que-es" className="relative text-center overflow-hidden py-16 bg-[#030b1a]">
 
       {/* HEADER */}
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        <p className="text-cyan-400 text-[10px] md:text-xs tracking-[0.35em] uppercase mb-4">
+      <div className="max-w-5xl mx-auto px-6 relative z-30 mb-8">
+        <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4">
           [ QUÉ ES SMARTFORGE ]
         </p>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
           Cinco módulos.
           <br />
           Un solo flujo.
@@ -86,116 +109,108 @@ const ModulesSection = () => {
           supervisión experta.
         </p>
 
-        {/* BOTÓN */}
-        <div className="flex justify-center mt-8 md:mt-10">
-          <a
-            href="#formulario"
-            className="
-            flex items-center gap-4
-            px-8 md:px-10 py-3
-            rounded-full
-            text-white font-semibold
-            text-sm md:text-base
-            bg-gradient-to-r from-cyan-500 to-teal-400
-            shadow-[0_0_25px_rgba(34,211,238,0.45)]
-            hover:scale-105 hover:shadow-[0_0_35px_rgba(34,211,238,0.6)]
-            transition-all duration-300
-            "
+        <div className="flex justify-center mt-10 relative">
+          <a 
+            href="#formulario" 
+            className="flex items-center gap-4 px-10 py-4 rounded-full text-white font-bold bg-gradient-to-r from-cyan-500 to-teal-400 shadow-[0_0_35px_rgba(34,211,238,0.4)] hover:scale-105 transition-all"
           >
-            SOLICITA TU DEMO
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white shadow-inner">
-              ↓
-            </span>
+            SOLICITA TU DEMO ↓
           </a>
         </div>
       </div>
 
       {/* CONTENEDOR DE MÓDULOS */}
-      <div className="relative flex flex-col items-center lg:-mt-20">
+      <div className="relative flex flex-col items-center lg:-mt-24 min-h-[600px] lg:min-h-[800px] justify-center">
 
-        {/* IMAGEN CENTRAL (SOLO DESKTOP) */}
-        <div className="relative hidden lg:flex justify-center w-full">
+        {/* IMAGEN CENTRAL */}
+        <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none">
           <img
             src={modulesImage}
-            alt="SmartForge módulos"
-            className="w-[1200px] xl:w-[1500px] 2xl:w-[1700px] max-w-none object-cover scale-105"
+            alt=""
+            className="w-[900px] xl:w-[1100px] opacity-60 mix-blend-lighten scale-110"
           />
-          <div className="absolute left-0 top-0 w-48 h-full bg-gradient-to-r from-[#020617] to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 w-48 h-full bg-gradient-to-l from-[#020617] to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030b1a]/20 to-[#030b1a] pointer-events-none" />
         </div>
 
-        {/* GRID MOBILE (CON MEJORA DE GRADIENTE) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 mt-12 lg:hidden max-w-5xl w-full relative z-20">
-          {modules.map((card) => (
-            <div
-              key={card.id}
-              className="
-                w-full text-left p-6 rounded-2xl
-                /* GRADIENTE RESPONSIVO */
-                bg-gradient-to-br from-[#0b1b2b] via-[#0b1b2b] to-[#122d42]
-                backdrop-blur-md border border-cyan-400/30
-                shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(34,211,238,0.1)]
-                active:scale-[0.98] transition-all duration-300
-              "
-            >
-              <div className="flex justify-between items-center mb-4">
-                <p className="text-cyan-400 text-[10px] font-bold uppercase tracking-widest">
-                  {card.module}
+        {/* RENDERIZADO DE CARDS (Desktop) - Se mantiene el orden original para posicionamiento absolute */}
+        <div className="hidden lg:block w-full h-full absolute inset-0 z-20">
+          {modules.map((card) => {
+            const Icon = card.icon;
+            return (
+              <div
+                key={card.id}
+                className={`
+                  absolute ${card.position}
+                  flex flex-col text-left p-6 rounded-2xl
+                  bg-white/15 backdrop-blur-lg border border-cyan-400/40
+                  shadow-[0_0_40px_rgba(34,211,238,0.2)]
+                  transition-all duration-500 group hover:bg-white/20 hover:border-cyan-400
+                  w-[380px] xl:w-[440px] 
+                  min-h-[180px]
+                `}
+              >
+                <div className="absolute top-5 right-5 text-cyan-400 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">
+                  <Icon size={32} strokeWidth={1.5} />
+                </div>
+
+                <div className="mb-3">
+                  <span className="px-3 py-1 rounded-full bg-cyan-400 text-black text-[10px] font-black uppercase tracking-widest">
+                    {card.module}
+                  </span>
+                </div>
+
+                <h3 className="text-white font-semibold text-lg mb-2 leading-tight whitespace-nowrap">
+                  <span className="text-cyan-400 italic mr-2">SmartForge</span>
+                  {card.title.replace("SmartForge ", "")}
+                </h3>
+
+                <p className="text-gray-200 text-sm leading-relaxed mb-4 opacity-95">
+                  {card.description}
                 </p>
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></div>
+
+                <ul className="text-gray-100 space-y-2 font-medium border-t border-white/20 pt-4">
+                  {card.items.slice(0, 4).map((item, i) => (
+                    <li key={i} className="text-sm flex items-center gap-2">
+                      <span className="text-cyan-400 font-bold">—</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <h3 className="text-white font-bold text-lg mb-4">
-                {card.title}
-              </h3>
-
-              <ul className="space-y-2.5">
-                {card.items.map((item, i) => (
-                  <li key={i} className="text-gray-300 text-sm flex items-start gap-2.5">
-                    <span className="text-cyan-500 text-xs mt-1">▹</span>
-                    <span className="leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* CARDS DESKTOP (POSICIONAMIENTO ORIGINAL) */}
-        {modules.map((card) => (
-          <div
-            key={card.id}
-            className={`
-              hidden lg:block
-              absolute ${card.position}
-              w-[260px] xl:w-[300px]
-              text-left p-6 rounded-xl
-              bg-[#0b1b2b]/80 backdrop-blur-md
-              border border-cyan-400/40
-              shadow-[0_0_40px_rgba(0,255,255,0.1)]
-              hover:border-cyan-400 transition-colors duration-300
-            `}
-          >
-            <p className="text-cyan-300 text-[10px] uppercase tracking-[0.2em] mb-2">
-              {card.module}
-            </p>
-            <h3 className="text-white font-semibold text-base xl:text-lg mb-4">
-              {card.title}
-            </h3>
-            <ul className="text-gray-300 text-sm space-y-2">
-              {card.items.map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-cyan-500">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-
+        {/* GRID MOBILE - REORDENADO (Suite Full Primero) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 mt-12 lg:hidden relative z-20 w-full">
+          {mobileModules.map((card) => {
+            const Icon = card.icon;
+            return (
+              <div key={`mob-${card.id}`} className="w-full text-left p-6 rounded-2xl flex flex-col bg-white/10 backdrop-blur-md border border-cyan-400/30 shadow-lg min-h-[220px]">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="px-2 py-0.5 rounded-full bg-cyan-400 text-black text-[9px] font-bold uppercase">{card.module}</span>
+                  <Icon size={28} className="text-cyan-400" />
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">
+                  <span className="text-cyan-400 italic block text-xs">SmartForge</span>
+                  {card.title.replace("SmartForge ", "")}
+                </h3>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">{card.description}</p>
+                <ul className="space-y-2 border-t border-white/10 pt-4">
+                  {card.items.map((item, i) => (
+                    <li key={i} className="text-gray-100 text-sm flex items-start gap-2">
+                      <span className="text-cyan-400 font-bold">—</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
 }
 
-export default ModulesSection
+export default ModulesSection;
