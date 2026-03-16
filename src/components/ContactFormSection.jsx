@@ -6,6 +6,7 @@ import logo from "../assets/images/smartforge-logo-vertical.png"
 import logoHorizontal from "../assets/images/smartforge-logo.png"
 
 const ContactFormSection = () => {
+
   const nameInputRef = useRef(null)
 
   const [formData, setFormData] = useState({
@@ -17,7 +18,6 @@ const ContactFormSection = () => {
 
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [error, setError] = useState(null)
 
   useEffect(() => {
     const handleHash = () => {
@@ -42,14 +42,12 @@ const ContactFormSection = () => {
   }
 
   const handleSubmit = async (e) => {
+
     e.preventDefault()
 
     setLoading(true)
-    setError(null)
-    setSuccess(false)
 
     try {
-      console.log("Enviando datos:", formData)
 
       const response = await fetch(
         "https://smartjob.cl/wp-json/smartforge/v1/lead",
@@ -63,12 +61,10 @@ const ContactFormSection = () => {
       )
 
       const result = await response.json()
-      console.log("Respuesta API:", result)
 
-      // MEJORA: Liberamos el estado de carga inmediatamente al recibir respuesta positiva
-      if (response.ok && result.success) {
+      if (result.success) {
+
         setSuccess(true)
-        setLoading(false) // El usuario ve el éxito de inmediato
 
         setFormData({
           nombre: "",
@@ -76,15 +72,15 @@ const ContactFormSection = () => {
           cargo: "",
           email: ""
         })
-      } else {
-        setLoading(false)
-        setError(result.message || "No se pudo guardar el contacto")
+
       }
-    } catch (err) {
-      console.error("Error:", err)
-      setLoading(false)
-      setError("Error conectando con el servidor")
+
+    } catch (error) {
+      console.error("Error enviando formulario:", error)
     }
+
+    setLoading(false)
+
   }
 
   return (
@@ -93,7 +89,9 @@ const ContactFormSection = () => {
       className="py-16 md:py-24 relative bg-cover bg-center"
       style={{ backgroundImage: `url(${bgGrid})` }}
     >
+
       <div className="max-w-[1100px] mx-auto px-6 text-center">
+
         <div className="flex justify-center mb-6">
           <img src={topIcon} className="w-16 h-16 md:w-20 md:h-20" alt="" />
         </div>
@@ -107,7 +105,10 @@ const ContactFormSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 md:mt-16 items-center">
+
+          {/* FORMULARIO */}
           <form onSubmit={handleSubmit} className="space-y-4 text-left">
+
             <input
               ref={nameInputRef}
               name="nombre"
@@ -116,7 +117,7 @@ const ContactFormSection = () => {
               type="text"
               placeholder="Nombre"
               required
-              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-cyan-400 text-white outline-none"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-cyan-400 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <input
@@ -126,7 +127,7 @@ const ContactFormSection = () => {
               type="text"
               placeholder="Empresa"
               required
-              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <input
@@ -136,7 +137,7 @@ const ContactFormSection = () => {
               type="text"
               placeholder="Cargo"
               required
-              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <input
@@ -146,44 +147,58 @@ const ContactFormSection = () => {
               type="email"
               placeholder="Email corporativo"
               required
-              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none"
+              className="w-full px-5 py-3 md:py-4 rounded-full bg-transparent border border-gray-500 text-white outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.45)]"
             />
 
             <button
               disabled={loading}
-              className="w-full mt-6 py-3 md:py-4 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-teal-400 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="
+              w-full mt-6 py-3 md:py-4
+              rounded-full
+              text-white font-semibold
+              text-sm md:text-base
+              bg-gradient-to-r from-cyan-500 to-teal-400
+              shadow-[0_0_25px_rgba(34,211,238,0.45)]
+              hover:scale-[1.03]
+              hover:shadow-[0_0_35px_rgba(34,211,238,0.65)]
+              transition-all duration-300
+              "
             >
               {loading ? "Enviando..." : "LA QUIERO"}
             </button>
 
             {success && (
-              <p className="text-green-400 text-sm mt-3 animate-pulse">
+              <p className="text-green-400 text-sm mt-3">
                 ✔ Gracias, te contactaremos pronto.
               </p>
             )}
 
-            {error && (
-              <p className="text-red-400 text-sm mt-3">
-                {error}
-              </p>
-            )}
           </form>
 
+          {/* LOGO */}
           <div className="flex flex-col items-center mt-6 md:mt-0">
+
             <img
               src={logo}
               className="w-40 md:w-56 mb-4"
-              alt="SmartForge Logo"
+              alt=""
             />
+
             <p className="text-gray-300 text-sm tracking-wide">
               Accelerate your performance
             </p>
+
           </div>
+
         </div>
+
       </div>
 
+      {/* FOOTER */}
       <div className="mt-20 md:mt-24 border-t border-white/10 pt-6 px-6">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-300">
+
+        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-300 text-center md:text-left">
+
           <div className="flex items-center gap-3">
             <img src={logoHorizontal} className="w-40 md:w-60" alt="SmartForge" />
           </div>
@@ -193,15 +208,27 @@ const ContactFormSection = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="https://smartjob.cl" className="hover:text-cyan-400 transition-colors">
+
+            <a
+              href="https://smartjob.cl"
+              className="hover:text-cyan-400 transition"
+            >
               Smartjob.cl
             </a>
-            <a href="#formulario" className="hover:text-cyan-400 transition-colors">
+
+            <a
+              href="#formulario"
+              className="hover:text-cyan-400 transition"
+            >
               Contacto
             </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
   )
 }
