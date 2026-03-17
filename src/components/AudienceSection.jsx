@@ -38,14 +38,11 @@ const AudienceSection = () => {
       id="para-quien"
       className="py-12 relative overflow-hidden"
     >
-
       <div className="max-w-[1300px] mx-auto px-6">
 
         {/* HEADER */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-20">
-
           <div>
-
             <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6">
               [ PARA QUIÉN ES ]
             </p>
@@ -60,57 +57,50 @@ const AudienceSection = () => {
               SmartForge habla el idioma del negocio y de la tecnología.
               Porque las mejores decisiones las toman quienes entienden ambos.
             </p>
-
           </div>
 
           {/* BOTÓN */}
           <div className="flex justify-start lg:justify-end">
-
             <a
               href="#formulario"
               className="
-              flex items-center gap-6
-              px-10 py-2
-              rounded-full
-              text-white font-semibold
-              bg-gradient-to-r from-cyan-500 to-teal-400
-              shadow-[0_0_25px_rgba(34,211,238,0.45)]
-              hover:scale-105
-              transition-all duration-300
+                flex items-center gap-6
+                px-10 py-2
+                rounded-full
+                text-white font-semibold
+                bg-gradient-to-r from-cyan-500 to-teal-400
+                shadow-[0_0_25px_rgba(34,211,238,0.45)]
+                hover:scale-105
+                transition-all duration-300
               "
             >
               SOLICITA TU DEMO
-
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500 text-white">
                 ↓
               </span>
-
             </a>
-
           </div>
-
         </div>
 
         {/* CARDS */}
         <div className="grid md:grid-cols-3 gap-8">
-
           {cards.map((card, index) => (
-
             <div
               key={index}
               className="
-              p-8
-              rounded-xl
-              border border-white/10
-              backdrop-blur-sm
-              bg-black/40
-              transition-all duration-300
-              hover:border-cyan-400
-              hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]
-              hover:-translate-y-2
+                p-8
+                rounded-xl
+                border border-white/10
+                backdrop-blur-sm
+                bg-black/40
+                transition-all duration-300
+                hover:border-cyan-400
+                hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]
+                hover:-translate-y-2
+                /* 1. Hacemos que la card sea un contenedor Flex vertical */
+                flex flex-col
               "
             >
-
               {/* icono */}
               <div className="flex items-center gap-3 text-cyan-400 mb-6">
                 <img src={card.icon} className="w-5 h-5" alt="" />
@@ -125,25 +115,27 @@ const AudienceSection = () => {
               </h3>
 
               {/* texto */}
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              {/* 2. flex-grow hace que el texto use el espacio sobrante, empujando la imagen al fondo */}
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                 {card.text}
               </p>
 
               {/* imagen */}
-              <img
-                src={card.image}
-                className="rounded-lg w-full"
-                alt=""
-              />
-
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={card.image}
+                  /* 3. h-52 fija la altura (puedes usar h-48 si la quieres más baja).
+                    4. object-cover evita que se deforme.
+                    5. transition-transform para un efecto pro al pasar el mouse.
+                  */
+                  className="w-full h-52 object-cover object-center transition-transform duration-500 hover:scale-110"
+                  alt={card.title}
+                />
+              </div>
             </div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
   )
 }
