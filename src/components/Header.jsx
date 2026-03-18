@@ -35,7 +35,7 @@ const Header = () => {
         {/* NAVEGACIÓN DESKTOP */}
         <nav className="hidden lg:flex items-center gap-8">
           <ul className="flex gap-8">
-            <li><a href="#que-es" className="text-sm text-white hover:text-cyan-400 transition-colors">Qué es SmartForge</a></li>
+            <li><a href="#que-es" className="text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">Qué es SmartForge</a></li>
             <li><a href="#como-funciona" className="text-sm text-white hover:text-cyan-400 transition-colors">Cómo funciona</a></li>
             <li><a href="#para-quien" className="text-sm text-white hover:text-cyan-400 transition-colors">Para quién</a></li>
           </ul>

@@ -5,8 +5,6 @@ import waveRight from "../assets/images/wave-right.svg"
 
 const benefits = [
   "Supervisión humana experta",
-  "Sin costo adicional de implementación",
-  "Producto 100% chileno",
   "Soporte enterprise 24/7"
 ]
 

@@ -1,36 +1,41 @@
 import React from "react"
 import glowCurve from "../assets/images/glow-curve.png"
-import { Cpu, ShieldCheck, Zap, CheckCircle } from "lucide-react"
+
+// 1. IMPORTACIÓN DE ICONOS SVG
+import IconCpu from "../assets/icons/icon_1.svg"
+import IconShield from "../assets/icons/Icon_2.svg"
+import IconZap from "../assets/icons/icon_3.svg"
+import IconCheck from "../assets/icons/Icon_4.svg"
 
 const features = [
   {
-    icon: Cpu,
+    icon: IconCpu,
     title: "Arquitectura desde el inicio",
-    text: "Diseña componentes, modelos de datos y APIs con estándares de seguridad y escalabilidad integrados desde el día uno."
+    text: "Diseña componentes, modelos de datos y APIs con estándares de seguridad y escalabilidad integrados desde el día uno. Sin deuda futura."
   },
   {
-    icon: ShieldCheck,
+    icon: IconShield,
     title: "Planificación que se ejecuta",
-    text: "Define objetivos, alcance y roadmap con precisión. Genera historias de usuario y estimaciones listas para el equipo."
+    text: "Define objetivos, alcance y roadmap con precisión. Genera historias de usuario y estimaciones listas para el equipo, sin ambigüedades."
   },
   {
-    icon: Zap,
+    icon: IconZap,
     title: "Desarrollo inteligente",
-    text: "Acelera implementación, refactor y pruebas con IA que aprende de tu negocio."
+    text: "Acelera implementación, refactor y pruebas con IA que aprende de tu negocio y mantiene consistencia en todo el proceso de desarrollo."
   },
   {
-    icon: CheckCircle,
+    icon: IconCheck,
     title: "QA y entrega continua",
-    text: "Automatiza validación, pipelines y despliegues con trazabilidad completa hasta producción."
+    text: "Automatiza la validación, los pipelines y los despliegues con trazabilidad completa hasta producción. Menos errores. Más confianza."
   }
 ]
 
 const ResultsSection = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden min-h-screen flex flex-col justify-center">
+    <section className="py-16 md:py-24 relative overflow-hidden min-h-screen flex flex-col justify-center bg-[#020617]">
 
-      {/* CONTENIDO */}
-      <div className="max-w-[1300px] mx-auto px-6 text-center relative z-10">
+      {/* CONTENIDO PRINCIPAL */}
+      <div className="max-w-[1500px] mx-auto px-6 text-center relative z-10">
 
         <p className="text-cyan-400 text-[10px] md:text-xs tracking-[0.35em] uppercase mb-4 md:mb-6">
           [ SOLUCIÓN ]
@@ -43,70 +48,57 @@ const ResultsSection = () => {
         </h2>
 
         <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          SmartForge no reemplaza a tu equipo: lo potencia.
-          La IA supervisada con expertos garantizan coherencia y calidad en cada etapa.
+          Del requerimiento a producción - con la velocidad y eficiencia que tu competencia aún no tiene.
         </p>
 
         {/* CARDS GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-20">
-
-          {features.map((feature, i) => {
-            const Icon = feature.icon
-
-            return (
-              <div
-                key={i}
-                className="
-                p-6 md:p-8
-                rounded-2xl
-                border border-white/10
-                /* MEJORA: Gradiente responsivo aplicado aquí */
-                bg-gradient-to-br from-[#0b1b2b] via-[#0b1b2b] to-[#122d42]
-                lg:bg-none lg:bg-white/[0.03] 
+          {features.map((feature, i) => (
+            <div
+              key={i}
+              className="
+                relative p-[1px] rounded-2xl transition-all duration-500 group flex
+                bg-white/10 
+                hover:bg-[linear-gradient(180deg,#004AAD_0%,#0097B2_31%,#29D9C2_100%)]
+                hover:shadow-[0_10px_40px_rgba(0,151,178,0.25)]
+              "
+            >
+              {/* FONDO INTERNO */}
+              <div className="
+                bg-[#050416] rounded-[15px] p-6 md:p-8 h-full w-full
+                transition-all duration-500 flex flex-col items-start text-left
+              ">
                 
-                backdrop-blur-md
-                hover:border-cyan-400/50
-                hover:bg-white/[0.06]
-                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
-                transition-all duration-300
-                text-left
-                group
-                active:scale-[0.98] lg:active:scale-100
-                "
-              >
-
-                <div className="w-12 h-12 rounded-xl border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-400 group-hover:text-black transition-all duration-300">
-                  <Icon size={22} />
+                {/* CONTENEDOR DEL ICONO - Altura fija para alinear títulos */}
+                <div className="flex items-center justify-center mb-6 h-12">
+                  <img 
+                    src={feature.icon} 
+                    alt={feature.title} 
+                    className="w-12 h-12 object-contain" 
+                  />
                 </div>
 
-                <h3 className="text-white font-bold text-lg mb-3">
+                {/* TÍTULO - Una sola línea y altura mínima */}
+                <h3 className="text-white font-bold text-lg xl:text-xl mb-3 whitespace-nowrap overflow-hidden text-ellipsis w-full min-h-[1.5em]">
                   {feature.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
+                {/* TEXTO DESCRIPTIVO */}
+                <p className="text-gray-400 text-sm font-light leading-relaxed group-hover:text-gray-200 transition-colors">
                   {feature.text}
                 </p>
-
               </div>
-            )
-          })}
-
+            </div>
+          ))}
         </div>
-
       </div>
 
-      {/* SCROLL DOWN */}
-      <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-gray-500 text-[10px] tracking-[0.4em] z-10 uppercase">
-        <div className="animate-bounce mb-2 text-cyan-400">◦</div>
-        Scroll
-      </div>
-
-      {/* CURVA LUMINOSA */}
+      {/* DECORACIÓN CURVA INFERIOR */}
       <div className="absolute bottom-[-200px] md:bottom-[-600px] lg:bottom-[-750px] left-1/2 -translate-x-1/2 w-[150%] md:w-[2200px] pointer-events-none opacity-50 md:opacity-90">
         <img
           src={glowCurve}
           alt="Glow Decoration"
-          className="w-full blur-[2px] md:blur-[1px]"
+          className="w-full"
         />
       </div>
 
@@ -114,4 +106,4 @@ const ResultsSection = () => {
   )
 }
 
-export default ResultsSection
+export default ResultsSection;

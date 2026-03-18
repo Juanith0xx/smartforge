@@ -92,8 +92,8 @@ const ModulesSection = () => {
     const parts = text.split("Forge");
     return (
       <h3 className={`text-white font-semibold ${isMobile ? 'text-lg' : 'text-lg xl:text-xl'} mb-2 leading-tight whitespace-nowrap`}>
-        <span className="text-white italic">Smart</span>
-        <span className="bg-gradient-to-r from-[#ffae00] via-[#70a444] via-[#22d3ee] to-[#6366f1] bg-clip-text text-transparent italic">
+        <span className="text-white">Smart</span>
+        <span className="bg-gradient-to-r from-[#ffae00] via-[#70a444] via-[#22d3ee] to-[#6366f1] bg-clip-text text-transparent">
           Forge
         </span>
         <span className="ml-2">{parts[1]}</span>
@@ -137,9 +137,9 @@ const ModulesSection = () => {
           <img
             src={modulesImage}
             alt=""
-            className="w-[900px] xl:w-[1100px] opacity-60 mix-blend-lighten scale-110"
+            className="w-[900px] xl:w-[1100px] opacity-100 mix-blend-lighten scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030b1a]/20 to-[#030b1a] pointer-events-none" />
+          
         </div>
 
         {/* RENDERIZADO DE CARDS (Desktop) */}
@@ -164,7 +164,7 @@ const ModulesSection = () => {
                 </div>
 
                 <div className="mb-3">
-                  <span className="px-3 py-1 rounded-full bg-cyan-400 text-black text-[10px] font-black uppercase tracking-widest">
+                  <span className="px-8 py-2 bg-gray-500/80 text-white text-[10px] font-bold uppercase tracking-widest">
                     {card.module}
                   </span>
                 </div>

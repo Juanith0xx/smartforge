@@ -921,6 +921,7 @@ footer.elementor-section,
   text-decoration: none;
   cursor: pointer;
   transition: outline-color 0.25s ease, color 0.25s ease;
+  text-transform: none;
 }
 
 .sf-btn-secondary:hover {
@@ -1111,4 +1112,10 @@ footer.elementor-section,
     left: var(--sf-px-section);
     right: var(--sf-px-section);
   }
+}
+
+
+nav ul li a, 
+.sf-btn-secondary {
+  text-transform: none !important;
 }
