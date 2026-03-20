@@ -12,10 +12,10 @@ const modules = [
   {
     id: 1,
     title: "SmartForge Arquitectura",
-    module: "MÓDULO 1",
+    module: "MÓDULO 2",
     icon: Layers,
-    position: "lg:left-[2%] lg:bottom-[10%]",
-    description: "Diagramas el roadmap técnico preciso para tu desarollo. Define los componentes, flujos de datos e integraciones.",
+    position: "lg:left-[2%] lg:bottom-[5%]",
+    description: "Diagrama el roadmap técnico preciso para tu desarrollo. Define los componentes, flujos de datos, integraciones y estándares de seguridad antes de escribir la primera línea de código.",
     items: [
       "Diseño de componentes y microservicios",
       "Modelado de datos y APIs",
@@ -26,10 +26,10 @@ const modules = [
   {
     id: 2,
     title: "SmartForge Planificación",
-    module: "MÓDULO 2",
+    module: "MÓDULO 1",
     icon: ClipboardCheck,
-    position: "lg:left-[5%] lg:top-[5%]",
-    description: "Convierte objetivos de negocio en un plan ejecutable. Define alcance, genera historias de usuarios y backlog.",
+    position: "lg:left-[5%] lg:top[5%]",
+    description: "Convierte objetivos de negocio en un plan ejecutable. Define alcance, genera historias de usuario, estimaciones y backlog listos para el equipo de desarrollo. Sin retrabajo.",
     items: [
       "Definición de objetivo y alcance",
       "Generación automática de historias de usuario",
@@ -39,11 +39,11 @@ const modules = [
   },
   {
     id: 3,
-    title: "SmartForge Suite Full",
+    title: "SmartForge Todos los módulos",
     module: "SUITE COMPLETA",
     icon: Box,
-    position: "lg:left-1/2 lg:top-[22%] lg:-translate-x-1/2",
-    description: "La solucíon integrada. Todos los módulos conectados en un solo flujo continuo de extremo a extremo.",
+    position: "lg:left-1/2 lg:top-[14%] lg:-translate-x-1/2",
+    description: "La solución integrada. Todos los módulos conectados en un solo flujo continuo: desde la arquitectura inicial hasta el despliegue final. Visibilidad, trazabilidad y control de extremo a extremo.",
     items: [
       "Integración completa de todos los módulos",
       "Dashboard unificado de avance y métricas",
@@ -56,8 +56,8 @@ const modules = [
     title: "SmartForge Desarrollo",
     module: "MÓDULO 3",
     icon: Code2,
-    position: "lg:right-[5%] lg:top-[5%]",
-    description: "Acelera la implementacion con IA que entiende el contexto de negocio. Refactoriza e implementa con consistencia.",
+    position: "lg:right-[5%] lg:top[5%]",
+    description: "Acelera la implementación con IA que entiende el contexto de tu negocio. Refactoriza, implementa y prueba con consistencia en todo el equipo, reduciendo fricciones y errores.",
     items: [
       "Generación y asistencia de código con IA",
       "Refactorización y deuda técnica controlada",
@@ -70,8 +70,8 @@ const modules = [
     title: "SmartForge QA",
     module: "MÓDULO 4",
     icon: ShieldCheck,
-    position: "lg:right-[2%] lg:bottom-[10%]",
-    description: "Automatiza la validación, los pipelines de CI/CD y los despligues. Trazabilidad completa hasta produccion.",
+    position: "lg:right-[2%] lg:bottom-[5%]",
+    description: "Automatiza la validación, los pipelines de CI/CD y los despliegues. Trazabilidad completa desde el código hasta producción. Entrega con confianza, no con cruces de dedos.",
     items: [
       "Automatización de pruebas end-to-end",
       "Pipelines de CI/CD configurados",
@@ -137,7 +137,8 @@ const ModulesSection = () => {
           <img
             src={modulesImage}
             alt=""
-            className="w-[900px] xl:w-[1100px] opacity-100 mix-blend-lighten scale-110"
+            // 🚩 CAMBIO APLICADO AQUÍ: opacity-50 para atenuar la imagen
+            className="w-[900px] xl:w-[1100px] opacity-60 mix-blend-lighten scale-110"
           />
           
         </div>
