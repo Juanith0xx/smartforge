@@ -33,12 +33,12 @@ const modules = [
     title: "Todos los módulos",
     module: "SUITE COMPLETA",
     position: "lg:left-1/2 lg:top-[10%] lg:-translate-x-1/2",
-    description: "La solución integrada. Todos los módulos conectados en un solo flujo continuo de extremo a extremo.",
+    description: "La solución integrada. Todos los Módulos conectados en un solo flujo continuo: desde la arquitectura inicial hasta el despliegue final.",
     items: [
-      "Integración completa",
-      "Dashboard unificado",
-      "Supervisión experta",
-      "Trazabilidad completa"
+      "Integración completa de todos los módulos",
+      "Dashboard unificado de avance y métricas",
+      "Supervisión experta en cada fase",
+      "Trazabilidad completa de decisiones técnicas"
     ]
   },
   {
@@ -91,10 +91,10 @@ const StyledTitle = ({ title, isMobile = false }) => {
 const ModulesSection = () => {
   const forgeGradientStr = "linear-gradient(to right, #F99B06 0%, #7F2191 35%, #004AAD 65%, #29D9C2 100%)";
 
-  const mobileModules = [
-    ...modules.filter(m => m.id === 3),
-    ...modules.filter(m => m.id !== 3).sort((a, b) => a.id - b.id)
-  ];
+  // --- CAMBIO CLAVE AQUÍ ---
+  // Definimos el orden explícito por ID: Suite (3), Mod 1 (2), Mod 2 (1), Mod 3 (4), Mod 4 (5)
+  const mobileOrder = [3, 2, 1, 4, 5];
+  const mobileModules = mobileOrder.map(id => modules.find(m => m.id === id));
 
   return (
     <section id="que-es" className="relative text-center overflow-hidden py-24 bg-[#030b1a]">
@@ -108,7 +108,7 @@ const ModulesSection = () => {
 
       <div className="relative flex flex-col items-center lg:-mt-24 min-h-[850px] justify-center">
         
-        {/* IMAGEN DE FONDO */}
+        {/* IMAGEN DE FONDO (DESKTOP) */}
         <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none">
           <img
             src={modulesImage}
@@ -117,78 +117,72 @@ const ModulesSection = () => {
           />
         </div>
 
-        {/* DESKTOP CARDS */}
+        {/* DESKTOP CARDS (Posicionamiento absoluto) */}
         <div className="hidden lg:block w-full h-full absolute inset-0 z-20">
-          {modules.map((card) => {
-            return (
-              /* 🚩 CONTENEDOR DEL BORDE (GRADIENTE) */
-              <div
-                key={card.id}
-                className={`absolute ${card.position} p-[2px] rounded-[2rem] transition-all duration-500 group hover:scale-[1.02] shadow-[0_0_40px_rgba(0,0,0,0.3)]`}
-                style={{ background: forgeGradientStr }}
+          {modules.map((card) => (
+            <div
+              key={card.id}
+              className={`absolute ${card.position} p-[2px] rounded-[2rem] transition-all duration-500 group hover:scale-[1.02] shadow-[0_0_40px_rgba(0,0,0,0.3)]`}
+              style={{ background: forgeGradientStr }}
+            >
+              <div 
+                className="h-full w-full p-8 rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/95 backdrop-blur-2xl"
+                style={{ width: card.id === 3 ? '420px' : '400px', minHeight: '340px' }}
               >
-                {/* 🚩 CONTENEDOR INTERNO (CARD TRANSPARENTE) */}
-                <div 
-                  className="h-full w-full p-8 rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/90 backdrop-blur-2xl"
-                  style={{ width: card.id === 3 ? '420px' : '400px', minHeight: '340px' }}
-                >
-                  <div className="mb-6">
-                    <span className="px-4 py-1.5 border border-white/10 bg-white/5 rounded-full text-white text-[10px] font-bold uppercase tracking-widest">
-                      {card.module}
-                    </span>
-                  </div>
-
-                  <StyledTitle title={card.title} />
-
-                  <p className="text-gray-200 text-sm leading-relaxed mb-6 opacity-90">
-                    {card.description}
-                  </p>
-
-                  <ul className="text-gray-300 space-y-2 border-t border-white/20 pt-6 mt-auto">
-                    {card.items.map((item, i) => (
-                      <li key={i} className="text-[13px] flex items-center gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="mb-6">
+                  <span className="px-4 py-1.5 border border-white/10 bg-white/5 rounded-full text-white text-[10px] font-bold uppercase tracking-widest">
+                    {card.module}
+                  </span>
                 </div>
+
+                <StyledTitle title={card.title} />
+
+                <p className="text-gray-200 text-sm leading-relaxed mb-6 opacity-90">
+                  {card.description}
+                </p>
+
+                <ul className="text-gray-300 space-y-2 border-t border-white/20 pt-6 mt-auto">
+                  {card.items.map((item, i) => (
+                    <li key={i} className="text-[13px] flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
-        {/* MOBILE GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 mt-12 lg:hidden relative z-20 w-full">
-          {mobileModules.map((card) => {
-            return (
-              <div 
-                key={`mob-${card.id}`} 
-                className="p-[2px] rounded-[2rem] w-full" 
-                style={{ background: forgeGradientStr }}
-              >
-                <div className="w-full text-left p-8 rounded-[1.9rem] flex flex-col bg-[#030b1a]/90 backdrop-blur-xl min-h-[250px]">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="px-3 py-1 rounded-full bg-white/10 text-white text-[9px] font-bold uppercase">
-                      {card.module}
-                    </span>
-                  </div>
-                  
-                  <StyledTitle title={card.title} isMobile={true} />
-
-                  <p className="text-gray-200 text-sm leading-relaxed mb-6">{card.description}</p>
-                  <ul className="space-y-3 border-t border-white/10 pt-6 mt-auto">
-                    {card.items.map((item, i) => (
-                      <li key={i} className="text-gray-100 text-sm flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+        {/* MOBILE GRID (Orden Suite -> 1 -> 2 -> 3 -> 4) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 mt-12 lg:hidden relative z-20 w-full max-w-2xl mx-auto">
+          {mobileModules.map((card) => (
+            <div 
+              key={`mob-${card.id}`} 
+              className="p-[2px] rounded-[2rem] w-full" 
+              style={{ background: forgeGradientStr }}
+            >
+              <div className="w-full text-left p-8 rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl min-h-[300px]">
+                <div className="flex justify-between items-center mb-6">
+                  <span className="px-3 py-1 rounded-full bg-white/10 text-white text-[9px] font-bold uppercase">
+                    {card.module}
+                  </span>
                 </div>
+                
+                <StyledTitle title={card.title} isMobile={true} />
+
+                <p className="text-gray-200 text-sm leading-relaxed mb-6">{card.description}</p>
+                <ul className="space-y-3 border-t border-white/10 pt-6 mt-auto">
+                  {card.items.map((item, i) => (
+                    <li key={i} className="text-gray-100 text-sm flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
