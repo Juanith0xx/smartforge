@@ -47,7 +47,7 @@ const AudienceSection = () => {
               [ PARA QUIÉN ES ]
             </p>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-xl">
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
               Diseñado para quienes
               <br />
               toman decisiones.

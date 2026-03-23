@@ -25,7 +25,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="como-funciona" className="py-32 relative overflow-hidden bg-[#020617]">
+    <section id="como-funciona" className="mt-32 relative overflow-hidden bg-[#020617]">
       <div className="max-w-[1300px] mx-auto px-6 relative z-10">
 
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6 font-bold">
