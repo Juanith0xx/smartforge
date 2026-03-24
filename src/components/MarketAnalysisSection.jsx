@@ -11,13 +11,13 @@ const problems = [
     icon: projectIcon,
     title: "Proyectos que no cierran",
     text: "La deuda técnica acumulada convierte cada sprint en una carrera contra el reloj. Los plazos se incumplen, los equipos se desgastan y los costos escalan.",
-    iconPosition: "left" 
+    iconPosition: "center" 
   },
   {
     icon: promiseIcon,
     title: "Promesas sin trazabilidad",
     text: "El mercado está lleno de soluciones de IA que prometen todo y entregan poco. Sin métricas reales, la confianza se desvanece.",
-    iconPosition: "right"
+    iconPosition: "center"
   },
   {
     icon: budgetIcon,
@@ -29,13 +29,13 @@ const problems = [
     icon: obstacleIcon,
     title: "Competir con obstáculos",
     text: "Tu competencia evoluciona su producto mientras tú resuelves bugs. La falta de agilidad real te deja fuera del juego.",
-    iconPosition: "left"
+    iconPosition: "center"
   },
   {
     icon: projectIcon,
     title: "Negocio esperando soluciones",
     text: "Muchos ofrecen velocidad con IA pero nadie garantiza supervisión real ni integración con tus procesos actuales.",
-    iconPosition: "right"
+    iconPosition: "center"
   }
 ];
 
@@ -49,9 +49,9 @@ const MarketAnalysisSection = () => {
         </p>
 
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-          Tu equipo no falla.
+          La diferencia no es la IA,
           <br />
-          <span>El sistema sí.</span>
+          <span>es la orquestación.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-10 mt-32 items-center">
@@ -158,10 +158,10 @@ const ProblemCard = ({ problem, isCenterColumn }) => {
 
       {/* CONTENIDO */}
       <div className="relative z-10">
-        <h3 className="text-white font-bold text-lg md:text-xl mb-3 leading-tight tracking-tight">
+        <h3 className="text-white font-bold text-lg md:text-xl mb-3 leading-tight tracking-tight text-left">
           {problem.title}
         </h3>
-        <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed font-normal group-hover:text-gray-300 transition-colors">
+        <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed font-normal group-hover:text-gray-300 transition-colors text-left ">
           {problem.text}
         </p>
       </div>

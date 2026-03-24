@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="sf-hero py-10 overflow-hidden" id="inicio">
 
       {/* TEXTO SUPERIOR */}
-      <p className="text-center text-xs tracking-[0.35em] uppercase text-gray-300 mb-10">
+      <p className="text-center text-xs tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10">
         FÁBRICA DE SOFTWARE CON IA · SUPERVISIÓN EXPERTA
       </p>
 

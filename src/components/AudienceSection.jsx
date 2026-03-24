@@ -110,7 +110,7 @@ const AudienceSection = () => {
               </div>
 
               {/* titulo */}
-              <h3 className="text-white font-semibold text-lg mb-4">
+              <h3 className="text-white font-semibold text-sm mb-4">
                 {card.title}
               </h3>
 

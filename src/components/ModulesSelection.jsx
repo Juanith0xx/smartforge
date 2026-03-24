@@ -58,7 +58,7 @@ const modules = [
     id: 5,
     title: "QA",
     module: "MÓDULO 4",
-    position: "lg:right-[3%] lg:bottom-[8%]",
+    position: "lg:right-[5%] lg:bottom-[14%]",
     description: "Automatiza la validación, los pipelines de CI/CD y los despliegues con trazabilidad completa.",
     items: [
       "QA automatizado",
