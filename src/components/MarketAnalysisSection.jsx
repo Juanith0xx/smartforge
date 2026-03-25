@@ -5,6 +5,7 @@ import projectIcon from "../assets/icons/div.pxl-item--icon-1.svg";
 import promiseIcon from "../assets/icons/div.pxl-item--icon.svg";
 import budgetIcon from "../assets/icons/div.pxl-item--icon-4.svg";
 import obstacleIcon from "../assets/icons/div.pxl-item--icon-3.svg";
+import newicon from "../assets/icons/icon.svg"
 
 const problems = [
   {
@@ -32,7 +33,7 @@ const problems = [
     iconPosition: "center"
   },
   {
-    icon: projectIcon,
+    icon: newicon,
     title: "Negocio esperando soluciones",
     text: "Muchos ofrecen velocidad con IA pero nadie garantiza supervisión real ni integración con tus procesos actuales.",
     iconPosition: "center"

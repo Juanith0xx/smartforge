@@ -45,7 +45,9 @@ const modules = [
     id: 4,
     title: "Desarrollo",
     module: "MÓDULO 3",
-    position: "lg:right-[8%] lg:-top-[10%]",
+    position: "lg:right-[9%] lg:-top-[10%]",
+    // Aquí definiste el padding personalizado
+    customPadding: "px-8 py-12", 
     description: "Acelera la implementación con IA que entiende el contexto. Refactoriza e implementa con consistencia.",
     items: [
       "Asistencia de código IA",
@@ -58,7 +60,8 @@ const modules = [
     id: 5,
     title: "QA",
     module: "MÓDULO 4",
-    position: "lg:right-[5%] lg:bottom-[14%]",
+    position: "lg:right-[5%] lg:bottom-[6%]",
+    customPadding: "px-8 py-12.5", 
     description: "Automatiza la validación, los pipelines de CI/CD y los despliegues con trazabilidad completa.",
     items: [
       "QA automatizado",
@@ -91,8 +94,6 @@ const StyledTitle = ({ title, isMobile = false }) => {
 const ModulesSection = () => {
   const forgeGradientStr = "linear-gradient(to right, #F99B06 0%, #7F2191 35%, #004AAD 65%, #29D9C2 100%)";
 
-  // --- CAMBIO CLAVE AQUÍ ---
-  // Definimos el orden explícito por ID: Suite (3), Mod 1 (2), Mod 2 (1), Mod 3 (4), Mod 4 (5)
   const mobileOrder = [3, 2, 1, 4, 5];
   const mobileModules = mobileOrder.map(id => modules.find(m => m.id === id));
 
@@ -108,7 +109,6 @@ const ModulesSection = () => {
 
       <div className="relative flex flex-col items-center lg:-mt-24 min-h-[850px] justify-center">
         
-        {/* IMAGEN DE FONDO (DESKTOP) */}
         <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none">
           <img
             src={modulesImage}
@@ -117,7 +117,7 @@ const ModulesSection = () => {
           />
         </div>
 
-        {/* DESKTOP CARDS (Posicionamiento absoluto) */}
+        {/* DESKTOP CARDS */}
         <div className="hidden lg:block w-full h-full absolute inset-0 z-20">
           {modules.map((card) => (
             <div
@@ -126,7 +126,8 @@ const ModulesSection = () => {
               style={{ background: forgeGradientStr }}
             >
               <div 
-                className="h-full w-full p-8 rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/95 backdrop-blur-2xl"
+                // CAMBIO AQUÍ: Usamos una plantilla de cadena para inyectar card.customPadding o p-8 por defecto
+                className={`h-full w-full rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/95 backdrop-blur-2xl ${card.customPadding ? card.customPadding : 'p-8'}`}
                 style={{ width: card.id === 3 ? '420px' : '400px', minHeight: '340px' }}
               >
                 <div className="mb-6">
@@ -154,7 +155,7 @@ const ModulesSection = () => {
           ))}
         </div>
 
-        {/* MOBILE GRID (Orden Suite -> 1 -> 2 -> 3 -> 4) */}
+        {/* MOBILE GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 mt-12 lg:hidden relative z-20 w-full max-w-2xl mx-auto">
           {mobileModules.map((card) => (
             <div 
@@ -162,7 +163,8 @@ const ModulesSection = () => {
               className="p-[2px] rounded-[2rem] w-full" 
               style={{ background: forgeGradientStr }}
             >
-              <div className="w-full text-left p-8 rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl min-h-[300px]">
+              {/* CAMBIO AQUÍ TAMBIÉN: Para que el padding personalizado funcione en móvil */}
+              <div className={`w-full text-left rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl min-h-[300px] ${card.customPadding ? card.customPadding : 'p-8'}`}>
                 <div className="flex justify-between items-center mb-6">
                   <span className="px-3 py-1 rounded-full bg-white/10 text-white text-[9px] font-bold uppercase">
                     {card.module}
