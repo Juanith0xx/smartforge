@@ -135,7 +135,7 @@ const Hero = () => {
 
           {/* ITEM */}
           <div className="space-y-2 border-r border-white/30">
-            <p className="text-5xl font-bold">5</p>
+            <p className="text-5xl font-bold">4</p>
             <p className="text-sm tracking-wider">MÓDULOS INTEGRADOS</p>
           </div>
 

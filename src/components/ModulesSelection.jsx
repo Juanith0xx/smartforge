@@ -103,7 +103,7 @@ const ModulesSection = () => {
       <div className="max-w-5xl mx-auto px-6 relative z-30 mb-12">
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4 opacity-80">[ QUÉ ES SMARTFORGE ]</p>
         <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight">
-          Cinco módulos.<br />Un solo flujo.
+          Cuatro módulos.<br />Un solo flujo.
         </h2>
       </div>
 
