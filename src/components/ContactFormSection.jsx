@@ -199,10 +199,7 @@ const ContactFormSection = () => {
 
         <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-300 text-center md:text-left">
 
-          <div className="flex items-center gap-3">
-            <img src={logoHorizontal} className="w-40 md:w-60" alt="SmartForge" />
-          </div>
-
+          
           <div>
             Un producto de <span className="text-cyan-400">SmartJob</span> · Chile
           </div>
@@ -218,7 +215,7 @@ const ContactFormSection = () => {
 
             <a
               href="#formulario"
-              className="hover:text-cyan-400 transition"
+              className="hover:text-cyan-400 transition text-xl ml-45"
             >
               Contacto
             </a>
