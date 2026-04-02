@@ -5,7 +5,7 @@ const modules = [
   {
     id: 1,
     title: "Arquitectura",
-    module: "MÓDULO 2",
+    module: "IDEA 2",
     position: "lg:left-[3%] lg:bottom-[8%]",
     description: "Diagrama el roadmap técnico preciso para tu desarrollo. Define los componentes, flujos de datos e integraciones.",
     items: [
@@ -18,7 +18,7 @@ const modules = [
   {
     id: 2,
     title: "Planificación",
-    module: "MÓDULO 1",
+    module: "IDEA 1",
     position: "lg:left-[8%] lg:-top-[10%]",
     description: "Convierte objetivos de negocio en un plan ejecutable. Define alcance, genera historias de usuario y backlog.",
     items: [
@@ -44,7 +44,7 @@ const modules = [
   {
     id: 4,
     title: "Desarrollo",
-    module: "MÓDULO 3",
+    module: "IDEA 3",
     position: "lg:right-[9%] lg:-top-[10%]",
     // Aquí definiste el padding personalizado
     customPadding: "px-8 py-12", 
@@ -59,15 +59,15 @@ const modules = [
   {
     id: 5,
     title: "QA",
-    module: "MÓDULO 4",
+    module: "IDEA 4",
     position: "lg:right-[5%] lg:bottom-[6%]",
     customPadding: "px-8 py-12.5", 
     description: "Automatiza la validación, los pipelines de CI/CD y los despliegues con trazabilidad completa.",
     items: [
-      "QA automatizado",
-      "Pipelines de CI/CD",
-      "Rollback automático",
-      "Trazabilidad producción"
+      "Ejecución pruebas funcionales, de carga y seguridad",
+      "Incremento cobertura de pruebas 10x",
+      "Disminución esfuerzo manual en 60%",
+      "Creación automática de evidencia y documentación"
     ]
   }
 ]
@@ -103,7 +103,7 @@ const ModulesSection = () => {
       <div className="max-w-5xl mx-auto px-6 relative z-30 mb-12">
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4 opacity-80">[ QUÉ ES SMARTFORGE ]</p>
         <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight">
-          Cuatro módulos.<br />Un solo flujo.
+          De la idea al<br />despliegue en producción.
         </h2>
       </div>
 

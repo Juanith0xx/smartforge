@@ -7,10 +7,11 @@ const Hero = () => {
     <section className="sf-hero py-10 overflow-hidden" id="inicio">
 
       {/* TEXTO SUPERIOR */}
-      <p className="text-center text-xs tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10">
-        FÁBRICA DE SOFTWARE CON IA · SUPERVISIÓN EXPERTA
+      <p className="flex flex-wrap items-center justify-center text-center text-xs tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10">
+      <span>Fábrica de software con IA</span>
+      <span className="mx-12 md:mx-8 text-white font-bold text-sm">+</span>
+      <span>Supervisión experta</span>
       </p>
-
       {/* GRID PRINCIPAL */}
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.3fr_1fr] items-center gap-10 relative min-h-[700px]">
 
@@ -44,9 +45,8 @@ const Hero = () => {
             <span className="text-[#29D9C2] block">Más eficiente.</span>
           </h1>
 
-          <p className="mt-8 text-lg text-gray-300 leading-relaxed max-w-xl mx-auto">
-            SmartForge combina inteligencia artificial de última generación con
-            supervisión humana acelerando el flujo completo con un{" "}
+          <p className="mt-8 text-xl text-gray-300 leading-relaxed max-w-xl mx-auto">
+            El flujo completo de desarrollo de software con un{" "} <br></br>
             <span className="text-[#29D9C2]">
               60% más rápido y 40% de ahorro en costos
             </span>.
