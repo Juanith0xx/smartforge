@@ -11,12 +11,12 @@ const features = [
   {
     icon: IconCpu,
     title: "Arquitectura desde el inicio",
-    text: "Diseña componentes, modelos de datos y APIs con estándares de seguridad y escalabilidad integrados desde el día uno. Sin deuda futura."
+    text: "Diseña componentes, modelos de datos y APIs con estándares de seguridad y escalabilidad integrados desde el día uno."
   },
   {
     icon: IconShield,
     title: "Planificación que se ejecuta",
-    text: "Define objetivos, alcance y roadmap con precisión. Genera historias de usuario y estimaciones listas para el equipo, sin ambigüedades."
+    text: "Define metas y alances detallados.Despliega historias de usuario alineadas rigurosamente a la arquitectura técnica,garantizando una implementación fluida,estimada y sin errores."
   },
   {
     icon: IconZap,
@@ -26,7 +26,7 @@ const features = [
   {
     icon: IconCheck,
     title: "QA y entrega continua",
-    text: "Automatiza la validación, los pipelines y los despliegues con trazabilidad completa hasta producción. Menos errores. Más confianza."
+    text: "Automatiza el proceso de calidad de software para asegurar el cumplimiento de los estándares y que el código responda a la idea inicial."
   }
 ]
 
@@ -48,7 +48,7 @@ const ResultsSection = () => {
         </h2>
 
         <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          Del requerimiento a producción - con la velocidad y eficiencia que tu competencia aún no tiene.
+          del requerimiento al testing - con la velocidad y eficiencia que tu competencia aún no tiene.
         </p>
 
         {/* CARDS GRID */}

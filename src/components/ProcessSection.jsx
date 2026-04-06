@@ -1,43 +1,48 @@
 import React from "react"
 
 const steps = [
+  { 
+    id: 0,
+    title: "Sincronización de estándares",
+    text: "SmartForge se contextualiza con tus estándares de desarrollo, lineamientos de arquitectura y de seguridad para asegurar que el flujo esté dentro de tu contexto empresarial."
+  },
   {
     id: 1,
-    title: "Define el objetivo",
-    text: "Tu equipo establece el contexto del negocio, los requerimientos clave y los criterios de éxito. SmartForge los transforma en un plan técnico ejecutable."
+    title: "Define tu idea",
+    text: "Evaluamos tu requerimiento de negocio y creamos historias de usuario detalladas para asegurar la comprensión total y la priorización de necesidades estratégicas."
   },
   {
     id: 2,
     title: "Arquitectura y Planificación",
-    text: "La IA genera la arquitectura del sistema y el backlog estructurado. Expertos validan cada decisión técnica antes de avanzar al desarrollo."
+    text: "La IA genera la arquitectura del sistema y el backlog estructurado. Expertos validan cada decisión técnica antes de iniciar el desarrollo."
   },
   {
     id: 3,
     title: "Desarrollo asistido por IA",
-    text: "Asistencia inteligente que mantiene consistencia del código, detecta y corrige deuda técnica en tiempo real y acelera cada ciclo de desarrollo — sin fricciones."
+    text: "Codificación siguiendo estándares de alta calidad, colaborando en el diseño y ejecución de pruebas para optimizar cada función."
   },
   {
     id: 4,
-    title: "QA automatizado y despliegue",
-    text: "Validación continua, pipelines automatizados y despliegue a producción con trazabilidad completa. Tu equipo entrega con confianza."
+    title: "QA y despliegue automatizado",
+    text: "Ejecución de pruebas automatizadas para detectar errores, generar documentación y asegurar la calidad y experiencia final del producto."
   }
 ]
 
 const ProcessSection = () => {
   return (
-    <section id="como-funciona" className="mt-32 relative overflow-hidden bg-[#020617]">
-      <div className="max-w-[1300px] mx-auto px-6 relative z-10">
+    <section id="como-funciona" className="py-32 relative overflow-hidden bg-[#020617]">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
-        <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6 font-bold">
+        <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6 font-bold opacity-80">
           [ CÓMO FUNCIONA ]
         </p>
 
-        <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight max-w-3xl mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl mb-16">
           De la idea al<br />despliegue en producción.
         </h2>
 
-        {/* CARDS GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        {/* CARDS GRID ACTUALIZADO */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mt-16">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -45,47 +50,48 @@ const ProcessSection = () => {
                 relative
                 rounded-[32px]
                 p-8
-                min-h-[280px]
+                min-h-[340px]
                 bg-[#050416]
                 overflow-hidden
-                border border-white/5
+                /* MODIFICACIÓN AQUÍ: Borde cyan-400 para móvil, borde original para sm y superiores */
+                border border-cyan-400 sm:border-white/5 
                 transition-all duration-500
-                hover:translate-y-[-5px]
+                hover:translate-y-[-8px]
+                hover:border-white/20
                 group
+                flex flex-col
               "
             >
               {/* --- GRADIENTES PERMANENTES --- */}
-              {/* Luz superior derecha fija (Cian) */}
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#29D9C2] opacity-[0.25] blur-[60px]" />
-              
-              {/* Luz inferior izquierda fija (Azul) */}
-              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#004AAD] opacity-[0.25] blur-[60px]" />
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#29D9C2] opacity-[0.15] blur-[60px] group-hover:opacity-[0.25] transition-opacity" />
+              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#004AAD] opacity-[0.15] blur-[60px] group-hover:opacity-[0.25] transition-opacity" />
 
-              {/* CABECERA DE LA CARD */}
-              <div className="relative flex items-center gap-4 mb-8">
-                {/* CÍRCULO CON DEGRADADO PERMANENTE */}
+              {/* CABECERA: Círculo y Número */}
+              <div className="relative mb-8">
                 <div className="
                   flex-shrink-0
                   flex items-center justify-center 
-                  w-12 h-12 rounded-full 
-                  p-[2px]
+                  w-11 h-11 rounded-full 
+                  p-[1px]
                   bg-[linear-gradient(180deg,#004AAD_0%,#0097B2_31%,#29D9C2_100%)]
-                  /* Añadimos un pequeño brillo al círculo también */
                   shadow-[0_0_15px_rgba(34,211,238,0.2)]
                 ">
-                  <div className="flex items-center justify-center w-full h-full bg-[#050416] rounded-full text-white font-bold text-base">
+                  <div className="flex items-center justify-center w-full h-full bg-[#050416] rounded-full text-white font-bold text-sm">
                     {step.id}
                   </div>
                 </div>
+              </div>
 
-                <h3 className="text-white font-bold text-xl leading-tight">
+              {/* TÍTULO CON ALTURA MÍNIMA PARA ALINEAR TODO EL GRID */}
+              <div className="relative min-h-[60px] mb-4 flex items-start">
+                <h3 className="text-white font-bold text-lg leading-tight group-hover:text-cyan-400 transition-colors">
                   {step.title}
                 </h3>
               </div>
 
-              {/* TEXTO DESCRIPTIVO */}
-              <div className="relative">
-                <p className="text-gray-400 text-[15px] leading-relaxed font-normal">
+              {/* TEXTO DESCRIPTIVO CON ALTURA MÍNIMA */}
+              <div className="relative min-h-[140px]">
+                <p className="text-gray-400 text-[14px] leading-relaxed font-normal opacity-90 group-hover:opacity-100 transition-opacity">
                   {step.text}
                 </p>
               </div>
@@ -93,7 +99,7 @@ const ProcessSection = () => {
           ))}
         </div>
 
-        {/* SECCIÓN COMPARATIVA */}
+         {/* SECCIÓN COMPARATIVA */}
         <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-8 mt-24 relative z-20">
           <div className="text-center rounded-xl px-8 py-7 bg-[linear-gradient(90deg,#F99B06_0%,#F99B06_31%,#F57575_100%)] text-white shadow-[0_10px_30px_rgba(249,155,6,0.25)]">
             <p className="font-bold uppercase tracking-[0.2em] text-xs mb-2">ANTES</p>

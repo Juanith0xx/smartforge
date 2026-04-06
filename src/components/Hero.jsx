@@ -9,7 +9,7 @@ const Hero = () => {
       {/* TEXTO SUPERIOR */}
       <p className="flex flex-wrap items-center justify-center text-center text-xs tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10">
       <span>Fábrica de software con IA</span>
-      <span className="mx-12 md:mx-8 text-white font-bold text-sm">+</span>
+      <span className="mx-12 md:mx-6 text-white font-bold text-sm">+</span>
       <span>Supervisión experta</span>
       </p>
       {/* GRID PRINCIPAL */}
