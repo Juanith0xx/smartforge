@@ -81,7 +81,7 @@ const ModulesSection = () => {
       <div className="max-w-5xl mx-auto px-6 relative z-30 mb-12">
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4 opacity-80">[ QUÉ ES SMARTFORGE ]</p>
         <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight">
-          De la idea al<br className="hidden sm:block" />código probado.
+          De la idea al <br className="hidden sm:block" />código probado.
         </h2>
         <h3 className="max-w-3xl mx-auto text-lg sm:text-2xl mt-6 font-medium text-gray-300 leading-relaxed">
           La solución integrada. Todos los módulos conectados en un solo flujo continuo: desde la arquitectura inicial hasta el despliegue final.
