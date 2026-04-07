@@ -6,12 +6,12 @@ const Hero = () => {
   return (
     <section className="sf-hero py-10 overflow-hidden" id="inicio">
 
-      {/* TEXTO SUPERIOR */}
-      <p className="flex flex-wrap items-center justify-center text-center text-xs tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10">
-      <span>Fábrica de software con IA</span>
-      <span className="mx-12 md:mx-6 text-white font-bold text-sm">+</span>
-      <span>Supervisión experta</span>
-      </p>
+    {/* TEXTO SUPERIOR - Optimizado para una sola línea en móvil */}
+<p className="flex flex-nowrap items-center justify-center text-center text-[9px] pb-6 sm:text-xs tracking-[0.2em] sm:tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
+  <span>Fábrica de software con IA</span>
+  <span className="mx-3 sm:mx-6 text-white font-bold text-sm">+</span>
+  <span>Supervisión experta</span>
+</p>
       {/* GRID PRINCIPAL */}
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.3fr_1fr] items-center gap-10 relative min-h-[700px]">
 

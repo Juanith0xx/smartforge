@@ -35,7 +35,7 @@ const modules = [
       "Asistencia de código IA",
       "Deuda técnica controlada",
       "Consistencia de estilo",
-      "Código generado queda en repositorio del cliente"
+      "Código en repositorio del cliente"
     ]
   },
   {
@@ -75,29 +75,33 @@ const ModulesSection = () => {
   const forgeGradientStr = "linear-gradient(to right, #F99B06 0%, #7F2191 35%, #004AAD 65%, #29D9C2 100%)";
 
   return (
-    <section id="que-es" className="relative text-center overflow-hidden py-24 bg-[#030b1a]">
+    <section id="que-es" className="relative text-center overflow-hidden pt-24 -pb-4 lg:pb-24 bg-[#030b1a]">
       
       {/* 1. Encabezado */}
-      <div className="max-w-5xl mx-auto px-6 relative z-30 -mb-12">
+      <div className="max-w-5xl mx-auto px-6 relative z-30 mb-12">
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4 opacity-80">[ QUÉ ES SMARTFORGE ]</p>
-        <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-          De la idea al<br />código probado.
+        <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight">
+          De la idea al<br className="hidden sm:block" />código probado.
         </h2>
+        <h3 className="max-w-3xl mx-auto text-lg sm:text-2xl mt-6 font-medium text-gray-300 leading-relaxed">
+          La solución integrada. Todos los módulos conectados en un solo flujo continuo: desde la arquitectura inicial hasta el despliegue final.
+        </h3>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center min-h-[750px]">
+      {/* MODIFICADO: min-h-0 para móvil evita el espacio vacío gigante abajo */}
+      <div className="relative flex flex-col items-center justify-center min-h-0 lg:min-h-[750px]">
         
         {/* 2. Imagen de fondo centrada */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
           <img
             src={modulesImage}
             alt=""
-            className="w-full max-w-[1250px] opacity-30 mix-blend-lighten brightness-125 scale-110"
+            className="w-full max-w-[1250px] opacity-20 sm:opacity-30 mix-blend-lighten brightness-125 scale-125 sm:scale-110"
           />
         </div>
 
         {/* 3. Desktop Cards (Horizontal + Simétricas) */}
-        <div className="hidden lg:flex flex-row justify-center items-center gap-12 z-20 w-full px-4 -mt-32">
+        <div className="hidden lg:flex flex-row justify-center items-center gap-8 xl:gap-12 z-20 w-full px-4 -mt-32">
           {modules.map((card) => (
             <div
               key={card.id}
@@ -108,7 +112,6 @@ const ModulesSection = () => {
                 className="h-full rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/90 backdrop-blur-3xl p-8"
                 style={{ width: '285px', minHeight: '440px' }}
               >
-                {/* Tag Módulo */}
                 <div className="mb-4">
                   <span className="px-3 py-1 border border-white/10 bg-white/5 rounded-full text-white text-[9px] font-bold uppercase tracking-widest">
                     {card.module}
@@ -117,15 +120,13 @@ const ModulesSection = () => {
 
                 <StyledTitle title={card.title} />
 
-                {/* Contenedor Descripción con Altura Fija para Simetría */}
                 <div className="min-h-[85px] mb-6">
                   <p className="text-gray-300 text-xs leading-relaxed opacity-80">
                     {card.description}
                   </p>
                 </div>
 
-                {/* Lista de Items con Línea Divisoria Alineada */}
-                <ul className="text-gray-300 space-y-2.5 border-t border-white/10 pt-6">
+                <ul className="text-gray-300 space-y-2.5 border-t border-white/10 pt-6 mt-auto">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-[12px] flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_5px_#22d3ee]" />
@@ -138,25 +139,36 @@ const ModulesSection = () => {
           ))}
         </div>
 
-        {/* 4. Mobile Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 lg:hidden relative z-20 w-full max-w-2xl mx-auto mt-8">
+        {/* 4. VERSIÓN RESPONSIVA OPTIMIZADA */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 lg:hidden relative z-20 w-full max-w-4xl mx-auto">
           {modules.map((card) => (
             <div 
               key={`mob-${card.id}`} 
-              className="p-[1px] rounded-[2rem] w-full" 
+              className="p-[1px] rounded-[2rem] w-full shadow-lg" 
               style={{ background: forgeGradientStr }}
             >
-              <div className="w-full text-left rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 p-8 min-h-[320px]">
-                <span className="mb-4 px-3 py-1 rounded-full bg-white/10 text-white text-[9px] font-bold uppercase self-start">
-                  {card.module}
-                </span>
+              {/* MODIFICADO: Padding inferior reducido en móvil (pb-6) */}
+              <div className="w-full text-left rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl p-7 pb-6 sm:p-8 sm:pb-8 h-full">
+                <div className="flex justify-between items-center mb-6">
+                  <span className="px-3 py-1 rounded-full border border-white/10 bg-white/10 text-white text-[10px] font-bold uppercase tracking-wider">
+                    {card.module}
+                  </span>
+                </div>
+                
                 <StyledTitle title={card.title} isMobile={true} />
-                <p className="text-gray-300 text-sm mb-6 opacity-80">{card.description}</p>
-                <ul className="space-y-3 border-t border-white/10 pt-6 mt-auto">
-                  {card.items.slice(0, 4).map((item, i) => (
-                    <li key={i} className="text-gray-200 text-xs flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0" />
-                      {item}
+
+                {/* MODIFICADO: min-h ajustado para móvil para evitar huecos innecesarios */}
+                <div className="min-h-[60px] sm:min-h-[90px] mb-4">
+                  <p className="text-gray-300 text-sm leading-relaxed opacity-90">
+                    {card.description}
+                  </p>
+                </div>
+
+                <ul className="space-y-3 border-t border-white/10 pt-5 mt-auto">
+                  {card.items.map((item, i) => (
+                    <li key={i} className="text-gray-200 text-[13px] flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
+                      <span className="opacity-90">{item}</span>
                     </li>
                   ))}
                 </ul>
