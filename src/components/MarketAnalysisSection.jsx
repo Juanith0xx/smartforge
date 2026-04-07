@@ -13,22 +13,23 @@ const problems = [
     text: "Ahorro del 40% en el ciclo de vida del desarrollo de software.",
     iconPosition: "center" 
   },
-  {
-    icon: promiseIcon,
-    title: "Aceleración en el Time to Market",
-    text: "Implementaciones 60% más rápidas al sincronizar necesidades del negocio con capacidades técnicas.",
-    iconPosition: "center"
-  },
+ {
+  icon: promiseIcon,
+  // Usamos fragmentos para que el <br /> funcione
+  title: <>Aceleración en el <br /> Time to Market</>, 
+  text: "Implementaciones 60% más rápidas al sincronizar necesidades del negocio con capacidades técnicas.",
+  iconPosition: "center" 
+},
   {
     icon: budgetIcon,
     title: "Enfoque eficiente",
-    text: "SmartForge automatiza tareas repetitivas, permitiendo a tu equipo enfocarse en la innovación.",
+    text: "SmartForge automatiza tareas repetitivas, permitiendo a tu equipo enfocarse en la innovación y la expertise.",
     iconPosition: "center"
   },
   {
     icon: obstacleIcon,
     title: "Escalabilidad y Seguridad",
-    text: "Escalabilidad estable con despliegues automatizados y QA integrado, en un entorno seguro.",
+    text: "Escalabilidad estable con despliegues automatizados y QA integrado, en un entorno seguro y normado.",
     iconPosition: "center"
   }
 ];
@@ -45,12 +46,12 @@ const MarketAnalysisSection = () => {
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-24">
           La diferencia no es la IA,
           <br />
-          <span className="text-transparent text-white">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
             es la orquestación.
           </span>
         </h2>
 
-        {/* GRID HORIZONTAL: 4 COLUMNAS EN LG */}
+        {/* GRID HORIZONTAL */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
           {problems.map((prob, index) => (
             <ProblemCard key={index} problem={prob} />
@@ -92,7 +93,7 @@ const ProblemCard = ({ problem }) => {
       ${textAlignClasses[position]}
       `}
     >
-      {/* 1. BORDE CON GRADIENTE EN ESQUINAS */}
+      {/* 1. BORDE CON GRADIENTE */}
       <div className="
         absolute inset-0 rounded-[32px] p-[1.2px]
         pointer-events-none z-0
@@ -123,14 +124,21 @@ const ProblemCard = ({ problem }) => {
         </div>
       </div>
 
-      {/* CONTENIDO (Alineación corregida) */}
+      {/* CONTENIDO ALINEADO */}
       <div className="relative z-10 flex flex-col h-full">
-        <h3 className="text-white font-bold text-xl mb-4 leading-tight tracking-tight min-h-[56px] flex items-center justify-center">
-          {problem.title}
-        </h3>
-        <p className="text-gray-400 text-sm md:text-[14px] leading-relaxed font-normal group-hover:text-gray-300 transition-colors">
-          {problem.text}
-        </p>
+        {/* ALTURA MÍNIMA PARA EL TÍTULO (Ajustada a 80px para 2-3 líneas) */}
+        <div className="min-h-[80px] flex items-center justify-center mb-4">
+          <h3 className="text-white font-bold text-xl leading-tight tracking-tight">
+            {problem.title}
+          </h3>
+        </div>
+
+        {/* ALTURA MÍNIMA PARA LA DESCRIPCIÓN (Para que todas las cards midan lo mismo) */}
+        <div className="min-h-[90px] flex items-start justify-center">
+          <p className="text-gray-400 text-sm md:text-[14px] leading-relaxed font-normal group-hover:text-gray-300 transition-colors">
+            {problem.text}
+          </p>
+        </div>
       </div>
     </div>
   );

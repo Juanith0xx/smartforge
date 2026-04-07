@@ -16,7 +16,7 @@ const features = [
   {
     icon: IconShield,
     title: "Planificación que se ejecuta",
-    text: "Define metas y alances detallados.Despliega historias de usuario alineadas rigurosamente a la arquitectura técnica,garantizando una implementación fluida,estimada y sin errores."
+    text: "Define metas y alances detallados.Despliega historias de usuario alineadas rigurosamente a la arquitectura técnica, garantizando una implementación fluida,estimada y sin errores."
   },
   {
     icon: IconZap,

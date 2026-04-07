@@ -215,7 +215,7 @@ const ContactFormSection = () => {
 
             <a
               href="#formulario"
-              className="hover:text-cyan-400 transition text-xl ml-45"
+              className="hover:text-cyan-400 transition  ml-45"
             >
               Contacto
             </a>
