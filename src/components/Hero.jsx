@@ -9,7 +9,7 @@ const Hero = () => {
     {/* TEXTO SUPERIOR - Optimizado para una sola línea en móvil */}
 <p className="flex flex-nowrap items-center justify-center text-center text-[9px] pb-6 sm:text-xs tracking-[0.2em] sm:tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
   <span>Fábrica de software con IA</span>
-  <span className="mx-3 sm:mx-6 text-white font-bold text-sm">+</span>
+  <span className="mx-3 sm:mx-4 text-white font-bold text-sm">+</span>
   <span>Supervisión experta</span>
 </p>
       {/* GRID PRINCIPAL */}
