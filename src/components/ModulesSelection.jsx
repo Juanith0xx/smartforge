@@ -110,7 +110,7 @@ const ModulesSection = () => {
             >
               <div 
                 className="h-full rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/90 backdrop-blur-3xl p-8"
-                style={{ width: '285px', minHeight: '440px' }}
+                style={{ width: '285px', minHeight: '400px' }}
               >
                 <div className="mb-4">
                   <span className="px-3 py-1 border border-white/10 bg-white/5 rounded-full text-white text-[9px] font-bold uppercase tracking-widest">
@@ -120,7 +120,7 @@ const ModulesSection = () => {
 
                 <StyledTitle title={card.title} />
 
-                <div className="min-h-[85px] mb-6">
+                <div className="min-h-[75px] mb-6">
                   <p className="text-gray-300 text-xs leading-relaxed opacity-80">
                     {card.description}
                   </p>
