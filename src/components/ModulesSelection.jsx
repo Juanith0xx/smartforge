@@ -34,7 +34,7 @@ const modules = [
     items: [
       "Asistencia de código IA",
       "Deuda técnica controlada",
-      "Consistencia de estilo",
+      "Integración con Jira y otras herramientas",
       "Código generado queda en repositorio del cliente"
     ]
   },
