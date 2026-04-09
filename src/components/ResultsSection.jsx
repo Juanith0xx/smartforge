@@ -16,7 +16,7 @@ const features = [
   {
     icon: IconShield,
     title: "Planificación que se ejecuta",
-    text: "Define metas y alances detallados.Despliega historias de usuario alineadas rigurosamente a la arquitectura técnica, garantizando una implementación fluida,estimada y sin errores."
+    text: "Define objetivos y alcances. Ejecuta historias con la arquitectura propuesta y genera estimaciones listas para el equipo sin ambigüedades."
   },
   {
     icon: IconZap,
@@ -48,7 +48,7 @@ const ResultsSection = () => {
         </h2>
 
         <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          del requerimiento al testing - con la velocidad y eficiencia que tu competencia aún no tiene.
+          Del requerimiento al testing - con la velocidad y eficiencia que tu competencia aún no tiene.
         </p>
 
         {/* CARDS GRID */}

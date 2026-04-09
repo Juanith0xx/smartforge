@@ -29,7 +29,7 @@ const problems = [
   {
     icon: obstacleIcon,
     title: "Escalabilidad y Seguridad",
-    text: "Escalabilidad estable con despliegues automatizados y QA integrado, en un entorno seguro y normado.",
+    text: "Con despliegues automatizados y QA integrado, en un entorno seguro y normado.",
     iconPosition: "center"
   }
 ];

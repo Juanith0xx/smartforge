@@ -35,7 +35,7 @@ const modules = [
       "Asistencia de código IA",
       "Deuda técnica controlada",
       "Consistencia de estilo",
-      "Código en repositorio del cliente"
+      "Código generado queda en repositorio del cliente"
     ]
   },
   {
@@ -45,9 +45,9 @@ const modules = [
     description: "Automatiza la validación, los pipelines de CI/CD y los despliegues con trazabilidad completa.",
     items: [
       "Ejecución pruebas funcionales",
-      "Incremento cobertura 10x",
-      "Disminución esfuerzo manual",
-      "Evidencia automatizada"
+      "Incremento cobertura de pruebas 10x",
+      "Disminución esfuerzo manual en 60%",
+      "Creación automática de evidencia y documentación"
     ]
   }
 ]

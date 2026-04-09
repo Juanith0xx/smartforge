@@ -4,12 +4,12 @@ const steps = [
   { 
     id: 0,
     title: "Sincronización de estándares",
-    text: "SmartForge se contextualiza con tus estándares de desarrollo, lineamientos de arquitectura y de seguridad para asegurar que el flujo esté dentro de tu contexto empresarial."
+    text: "SmartForge se contextualiza con los estándares de desarrollo, lineamientos de arquitectura y de seguridad, normativas y reglas de negocios para asegurar que el flujo de desarrollo este dentro del contexto empresarial del cliente."
   },
   {
     id: 1,
     title: "Define tu idea",
-    text: "Evaluamos tu requerimiento de negocio y creamos historias de usuario detalladas para asegurar la comprensión total y la priorización de necesidades estratégicas."
+    text: "Evaluamos tu requerimiento de negocio y creamos historias de usuario detalladas para asegurar la comprensión total y la priorización de necesidades."
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const steps = [
   {
     id: 4,
     title: "QA y despliegue automatizado",
-    text: "Ejecución de pruebas automatizadas para detectar errores, generar documentación y asegurar la calidad y experiencia final del producto."
+    text: "Ejecución de pruebas para detectar errores, generar documentación y asegurar la calidad y experiencia del producto."
   }
 ]
 
