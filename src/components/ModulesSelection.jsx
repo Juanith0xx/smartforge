@@ -34,7 +34,7 @@ const modules = [
     items: [
       "Asistencia de código IA",
       "Deuda técnica controlada",
-      "Integración con Jira y otras herramientas",
+      "Consistencia de estilo",
       "Código generado queda en repositorio del cliente"
     ]
   },
@@ -60,7 +60,7 @@ const StyledTitle = ({ title, isMobile = false }) => {
   };
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 min-h-[90px]">
       <h3 className={`text-white font-bold ${isMobile ? 'text-xl' : 'text-2xl'} leading-tight tracking-tight`}>
         Smart<span style={forgeGradient}>Forge</span>
       </h3>
@@ -77,7 +77,7 @@ const ModulesSection = () => {
   return (
     <section id="que-es" className="relative text-center overflow-hidden pt-24 -pb-4 lg:pb-24 bg-[#030b1a]">
       
-      {/* 1. Encabezado */}
+      {/* HEADER */}
       <div className="max-w-5xl mx-auto px-6 relative z-30 mb-2">
         <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-4 opacity-80">[ QUÉ ES SMARTFORGE ]</p>
         <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight">
@@ -88,10 +88,9 @@ const ModulesSection = () => {
         </h3>
       </div>
 
-      {/* MODIFICADO: min-h-0 para móvil evita el espacio vacío gigante abajo */}
       <div className="relative flex flex-col items-center justify-center min-h-0 lg:min-h-[750px]">
         
-        {/* 2. Imagen de fondo centrada */}
+        {/* BACKGROUND */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
           <img
             src={modulesImage}
@@ -100,7 +99,7 @@ const ModulesSection = () => {
           />
         </div>
 
-        {/* 3. Desktop Cards (Horizontal + Simétricas) */}
+        {/* DESKTOP */}
         <div className="hidden lg:flex flex-row justify-center items-center gap-8 xl:gap-12 z-20 w-full px-4 -mt-32">
           {modules.map((card) => (
             <div
@@ -120,13 +119,13 @@ const ModulesSection = () => {
 
                 <StyledTitle title={card.title} />
 
-                <div className="min-h-[75px] mb-6">
+                <div className="min-h-[88px] mb-6">
                   <p className="text-gray-300 text-xs leading-relaxed opacity-80">
                     {card.description}
                   </p>
                 </div>
 
-                <ul className="text-gray-300 space-y-2.5 border-t border-white/10 pt-6 mt-auto">
+                <ul className="text-gray-300 space-y-2.5 border-t border-white/10 pt-6 mt-auto min-h-[140px]">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-[12px] flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_5px_#22d3ee]" />
@@ -139,7 +138,7 @@ const ModulesSection = () => {
           ))}
         </div>
 
-        {/* 4. VERSIÓN RESPONSIVA OPTIMIZADA */}
+        {/* MOBILE */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 lg:hidden relative z-20 w-full max-w-4xl mx-auto">
           {modules.map((card) => (
             <div 
@@ -147,7 +146,6 @@ const ModulesSection = () => {
               className="p-[1px] rounded-[2rem] w-full shadow-lg" 
               style={{ background: forgeGradientStr }}
             >
-              {/* MODIFICADO: Padding inferior reducido en móvil (pb-6) */}
               <div className="w-full text-left rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl p-7 pb-6 sm:p-8 sm:pb-8 h-full">
                 <div className="flex justify-between items-center mb-6">
                   <span className="px-3 py-1 rounded-full border border-white/10 bg-white/10 text-white text-[10px] font-bold uppercase tracking-wider">
@@ -157,14 +155,13 @@ const ModulesSection = () => {
                 
                 <StyledTitle title={card.title} isMobile={true} />
 
-                {/* MODIFICADO: min-h ajustado para móvil para evitar huecos innecesarios */}
-                <div className="min-h-[60px] sm:min-h-[90px] mb-4">
+                <div className="min-h-[100px] sm:min-h-[120px] mb-4">
                   <p className="text-gray-300 text-sm leading-relaxed opacity-90">
                     {card.description}
                   </p>
                 </div>
 
-                <ul className="space-y-3 border-t border-white/10 pt-5 mt-auto">
+                <ul className="space-y-3 border-t border-white/10 pt-5 mt-auto min-h-[140px]">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-gray-200 text-[13px] flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
