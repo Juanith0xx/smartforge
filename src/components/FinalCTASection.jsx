@@ -4,8 +4,7 @@ import waveLeft from "../assets/images/wave-left.svg"
 import waveRight from "../assets/images/wave-right.svg"
 
 const benefits = [
-  "Supervisión humana experta",
-  "Soporte enterprise 24/7"
+  "Supervisión humana experta"
 ]
 
 const FinalCTASection = () => {

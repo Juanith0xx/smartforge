@@ -4,8 +4,8 @@ import modulesImage from "../assets/images/modulo.png"
 const modules = [
   {
     id: 1,
-    title: "Planificación",
-    module: "IDEA 1",
+    title: "Idea y planificación",
+    module: "Módulo 1",
     description: "Convierte objetivos de negocio en un plan ejecutable. Define alcance, genera historias de usuario y backlog.",
     items: [
       "Definición de alcance",
@@ -17,7 +17,7 @@ const modules = [
   {
     id: 2,
     title: "Arquitectura",
-    module: "IDEA 2",
+    module: "Módulo 2",
     description: "Diagrama el roadmap técnico preciso para tu desarrollo. Define los componentes, flujos de datos e integraciones.",
     items: [
       "Diseño de microservicios",
@@ -29,7 +29,7 @@ const modules = [
   {
     id: 3,
     title: "Desarrollo",
-    module: "IDEA 3",
+    module: "Módulo 3",
     description: "Acelera la implementación con IA que entiende el contexto. Refactoriza e implementa con consistencia.",
     items: [
       "Asistencia de código IA",
@@ -41,7 +41,7 @@ const modules = [
   {
     id: 4,
     title: "QA",
-    module: "IDEA 4",
+    module: "Módulo 4",
     description: "Automatiza la validación, los pipelines de CI/CD y los despliegues con trazabilidad completa.",
     items: [
       "Ejecución pruebas funcionales",
