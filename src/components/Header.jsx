@@ -40,19 +40,19 @@ const Header = () => {
 
           {/* NAVEGACIÓN DESKTOP - gap responsivo y flex-nowrap */}
           <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
-            <ul className="flex gap-6 xl:gap-10 items-center font-poppins flex-nowrap">
+            <ul className="flex gap-5 xl:gap-10 items-center font-poppins flex-nowrap">
               <li>
-                <a href="#que-es" className="text-[13px] pl-18 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="#que-es" className="text-[10px] pl-18 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
                   Qué es SmartForge
                 </a>
               </li>
               <li>
-                <a href="#como-funciona" className="text-[13px] xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="#como-funciona" className="text-[10px] xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
                   Cómo funciona
                 </a>
               </li>
               <li>
-                <a href="#para-quien" className="text-[13px] xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="#para-quien" className="text-[10px] xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
                   Para quién
                 </a>
               </li>
