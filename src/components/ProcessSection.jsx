@@ -33,16 +33,19 @@ const ProcessSection = () => {
     <section id="como-funciona" className="py-24 relative overflow-hidden bg-[#020617]">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
-        <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6 font-bold opacity-80">
-          [ CÓMO FUNCIONA ]
-        </p>
+        {/* CONTENEDOR CENTRADO */}
+        <div className="text-center mb-16">
+            <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6 font-bold opacity-80">
+            [ CÓMO FUNCIONA ]
+            </p>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl mb-16">
-          De la idea al<br />despliegue en producción.
-        </h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-4xl mx-auto">
+            De la idea al<br />despliegue en producción.
+            </h2>
+        </div>
 
-        {/* CARDS GRID ACTUALIZADO */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mt-16">
+        {/* CARDS GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -53,7 +56,6 @@ const ProcessSection = () => {
                 min-h-[340px]
                 bg-[#050416]
                 overflow-hidden
-                /* MODIFICACIÓN AQUÍ: Borde cyan-400 para móvil, borde original para sm y superiores */
                 border border-cyan-400 sm:border-white/5 
                 transition-all duration-500
                 hover:translate-y-[-8px]
@@ -82,16 +84,16 @@ const ProcessSection = () => {
                 </div>
               </div>
 
-              {/* TÍTULO CON ALTURA MÍNIMA PARA ALINEAR TODO EL GRID */}
+              {/* TÍTULO */}
               <div className="relative min-h-[60px] mb-4 flex items-start">
                 <h3 className="text-white font-bold text-lg leading-tight group-hover:text-cyan-400 transition-colors">
                   {step.title}
                 </h3>
               </div>
 
-              {/* TEXTO DESCRIPTIVO CON ALTURA MÍNIMA */}
+              {/* TEXTO DESCRIPTIVO */}
               <div className="relative min-h-[140px]">
-                <p className="text-gray-400 text-[14px] leading-relaxed font-normal opacity-90 group-hover:opacity-100 transition-opacity">
+                <p className="text-gray-400 text-[14px] leading-relaxed font-normal opacity-90 group-hover:opacity-100 transition-opacity text-left">
                   {step.text}
                 </p>
               </div>
