@@ -120,16 +120,18 @@ const ModulesSection = () => {
                 <StyledTitle title={card.title} />
 
                 <div className="min-h-[88px] mb-6">
-                  <p className="text-gray-300 text-xs leading-relaxed opacity-80">
+                  {/* CAMBIO: text-white con opacidad para legibilidad */}
+                  <p className="text-white text-xs leading-relaxed opacity-90">
                     {card.description}
                   </p>
                 </div>
 
-                <ul className="text-gray-300 space-y-2.5 border-t border-white/10 pt-6 mt-auto min-h-[140px]">
+                <ul className="text-white space-y-2.5 border-t border-white/10 pt-6 mt-auto min-h-[140px]">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-[12px] flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_5px_#22d3ee]" />
-                      <span className="opacity-90">{item}</span>
+                      {/* CAMBIO: text-white */}
+                      <span className="text-white opacity-90">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -156,16 +158,18 @@ const ModulesSection = () => {
                 <StyledTitle title={card.title} isMobile={true} />
 
                 <div className="min-h-[100px] sm:min-h-[120px] mb-4">
-                  <p className="text-gray-300 text-sm leading-relaxed opacity-90">
+                  {/* CAMBIO: text-white */}
+                  <p className="text-white text-sm leading-relaxed opacity-90">
                     {card.description}
                   </p>
                 </div>
 
                 <ul className="space-y-3 border-t border-white/10 pt-5 mt-auto min-h-[140px]">
                   {card.items.map((item, i) => (
-                    <li key={i} className="text-gray-200 text-[13px] flex items-start gap-3">
+                    <li key={i} className="text-white text-[13px] flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
-                      <span className="opacity-90">{item}</span>
+                      {/* CAMBIO: text-white */}
+                      <span className="text-white opacity-90">{item}</span>
                     </li>
                   ))}
                 </ul>
