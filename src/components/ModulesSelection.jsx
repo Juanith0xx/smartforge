@@ -79,7 +79,7 @@ const ModulesSection = () => {
       
       {/* HEADER */}
       <div className="max-w-5xl mx-auto px-6 relative z-30 mb-2">
-        <p className="text-cyan-400 text-xs tracking-[0.40em] uppercase mb-4 opacity-80 font-bold">[ QUÉ ES SMARTFORGE ]</p>
+        <p className="text-cyan-400 text-xs tracking-[0.40em] uppercase mb-4 opacity-80 font-extrabold">[ QUÉ ES SMARTFORGE ]</p>
         <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight">
           De la idea al <br className="hidden sm:block" />código probado.
         </h2>
