@@ -46,10 +46,10 @@ const Hero = () => {
           </h1>
 
           <p className="mt-8 text-xl text-gray-300 leading-relaxed max-w-xl mx-auto">
-            El flujo completo de desarrollo de software con un{" "} <br></br>
+            El flujo completo de desarrollo de software {" "} <br></br>
             <span className="text-[#29D9C2]">
-              60% más rápido y 40% de ahorro en costos
-            </span>.
+              con un 60% más rápido y 40% de ahorro en costos.
+            </span>
           </p>
 
           {/* BOTONES */}
