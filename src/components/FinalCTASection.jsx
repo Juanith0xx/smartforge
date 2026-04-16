@@ -9,7 +9,7 @@ const benefits = [
 
 const FinalCTASection = () => {
   return (
-    <section className="py-36 relative overflow-hidden text-center">
+    <section className="py-20 relative overflow-hidden text-center">
 
       {/* ondas izquierda */}
       <img
@@ -28,7 +28,7 @@ const FinalCTASection = () => {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
 
         {/* titulo */}
-        <h2 className="!text-5xl md:text-6xl font-bold text-white leading-tight">
+        <h2 className="text-5xl md:text-5xl font-bold text-white leading-tight">
           El futuro de tu desarrollo
           <br />
           <span className="text-cyan-400">

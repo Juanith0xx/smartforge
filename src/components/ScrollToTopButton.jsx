@@ -3,6 +3,7 @@ import { FiArrowUp } from "react-icons/fi"
 
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false)
+  const [atBottom, setAtBottom] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -10,50 +11,62 @@ const ScrollToTopButton = () => {
       const windowHeight = window.innerHeight
       const documentHeight = document.documentElement.scrollHeight
 
-      // El botón solo es visible si estamos a menos de 20px del final real
-      // Ajustamos el margen a 20px para asegurar que aparezca en todos los navegadores
-      const isAtBottom = scrollTop + windowHeight >= documentHeight - 20
-      
-      setVisible(isAtBottom)
+      // Mostrar botón después de 500px de scroll
+      setVisible(scrollTop > 500)
+
+      // Si estamos cerca del final (menos de 100px para llegar), cambiamos a modo "subir"
+      // Si no, el botón indicará "bajar"
+      setAtBottom(scrollTop + windowHeight >= documentHeight - 100)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
+  const handleAction = () => {
+    if (atBottom) {
+      // Si está en el fondo, sube al inicio
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    } else {
+      // Si no está en el fondo, baja hasta el final
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth"
+      })
+    }
   }
 
   return (
     <button
-      onClick={scrollToTop}
-      aria-label="Volver al inicio"
+      onClick={handleAction}
+      aria-label={atBottom ? "Scroll to top" : "Scroll to bottom"}
       className={`
         fixed
-        bottom-6 md:bottom-10
-        right-6 md:right-10
+        bottom-5 md:bottom-8
+        right-4 md:right-8
         z-50
-        p-3 md:p-4
+        p-2 md:p-3
         rounded-full
-        bg-gradient-to-r from-cyan-500 to-teal-400
+        bg-[linear-gradient(180deg,#004AAD_0%,#0097B2_31%,#29D9C2_100%)]
         text-white
-        shadow-[0_0_30px_rgba(34,211,238,0.6)]
-        transition-all duration-500 ease-in-out
+        shadow-[0_0_25px_rgba(34,211,238,0.45)]
+        transition-all duration-500 ease-out
         hover:scale-110 active:scale-95
-        
-        /* Efecto de entrada/salida */
-        ${visible 
-          ? "opacity-100 translate-y-0 scale-100" 
-          : "opacity-0 translate-y-20 scale-50 pointer-events-none"}
+        ${visible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-10 pointer-events-none"}
       `}
     >
       <FiArrowUp
-        size={24}
-        className="md:w-[26px] md:h-[26px]"
+        size={20}
+        className={`
+          md:w-[22px] md:h-[22px]
+          transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)
+          ${atBottom ? "rotate-0" : "rotate-180"}
+        `}
       />
     </button>
   )

@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="sf-hero py-10 overflow-hidden" id="inicio">
 
     {/* TEXTO SUPERIOR - Optimizado para una sola línea en móvil */}
-<p className="flex flex-nowrap items-center justify-center text-center text-[11px] pb-6 sm:text-base tracking-[0.2em] sm:tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
+<p className="flex flex-nowrap items-center justify-center text-center text-[10px] pb-6 sm:text-base tracking-[0.2em] sm:tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
   <span>Fábrica de software con IA</span>
   <span className="mx-3 sm:mx-4 text-white font-bold text-sm">+</span>
   <span>Supervisión experta</span>
@@ -40,7 +40,7 @@ const Hero = () => {
         {/* CONTENIDO CENTRAL */}
         <div className="text-center px-6 z-10 relative">
 
-          <h1 className="!text-6xl md:text-6xl lg:text-7xl font-bold leading-[1.1]">
+          <h1 className="!text-5xl md:text-5xl lg:text-7xl font-bold leading-[1.1]">
             <span className="text-white block">Más rápido.</span>
             <span className="text-[#29D9C2] block">Más eficiente.</span>
           </h1>

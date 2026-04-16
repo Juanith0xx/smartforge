@@ -32,12 +32,12 @@ const features = [
 
 const ResultsSection = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden min-h-screen flex flex-col justify-center bg-[#020617]">
+    <section className="pt-12 md:pt-16 pb-24 relative overflow-hidden flex flex-col bg-[#020617]">
 
       {/* CONTENIDO PRINCIPAL */}
       <div className="max-w-[1500px] mx-auto px-6 text-center relative z-10">
 
-        <p className="text-cyan-400 text-[10px] md:text-xs tracking-[0.35em] uppercase mb-4 md:mb-6">
+        <p className="text-[#29D9C2] text-[10px] md:text-xs tracking-[0.40em] font-extrabold uppercase mb-4 md:mb-6">
           [ SOLUCIÓN ]
         </p>
 
@@ -47,29 +47,30 @@ const ResultsSection = () => {
           <span className="text-white/90"> Desde el primer sprint.</span>
         </h2>
 
-        <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Del requerimiento al testing - con la velocidad y eficiencia que tu competencia aún no tiene.
         </p>
 
         {/* CARDS GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-10 md:mt-14">
           {features.map((feature, i) => (
             <div
               key={i}
               className="
-                relative p-[1px] rounded-2xl transition-all duration-500 group flex
-                bg-white/10 
-                hover:bg-[linear-gradient(180deg,#004AAD_0%,#0097B2_31%,#29D9C2_100%)]
-                hover:shadow-[0_10px_40px_rgba(0,151,178,0.25)]
+                relative p-[1px] rounded-2xl flex
+                /* Borde degradado permanente */
+                bg-[linear-gradient(180deg,#004AAD_0%,#0097B2_31%,#29D9C2_100%)]
+                /* Sombra suave permanente para resaltar el borde */
+                shadow-[0_10px_30px_rgba(0,151,178,0.15)]
               "
             >
               {/* FONDO INTERNO */}
               <div className="
                 bg-[#050416] rounded-[15px] p-6 md:p-8 h-full w-full
-                transition-all duration-500 flex flex-col items-start text-left
+                flex flex-col items-start text-left
               ">
                 
-                {/* CONTENEDOR DEL ICONO - Altura fija para alinear títulos */}
+                {/* CONTENEDOR DEL ICONO */}
                 <div className="flex items-center justify-center mb-6 h-12">
                   <img 
                     src={feature.icon} 
@@ -78,13 +79,13 @@ const ResultsSection = () => {
                   />
                 </div>
 
-                {/* TÍTULO - Una sola línea y altura mínima */}
-                <h3 className="text-white font-bold text-lg xl:text-xl mb-3 whitespace-nowrap overflow-hidden text-ellipsis w-full min-h-[1.5em]">
+                {/* TÍTULO */}
+                <h3 className="text-white font-bold text-lg xl:text-[19px] mb-3 whitespace-nowrap overflow-hidden text-ellipsis w-full min-h-[1.5em]">
                   {feature.title}
                 </h3>
 
                 {/* TEXTO DESCRIPTIVO */}
-                <p className="text-gray-400 text-sm font-light leading-relaxed group-hover:text-gray-200 transition-colors">
+                <p className="text-gray-300 text-sm font-light leading-relaxed">
                   {feature.text}
                 </p>
               </div>

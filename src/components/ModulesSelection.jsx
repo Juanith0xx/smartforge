@@ -60,7 +60,7 @@ const StyledTitle = ({ title, isMobile = false }) => {
   };
 
   return (
-    <div className="mb-4 min-h-[90px]">
+    <div className="min-h-[75px]">
       <h3 className={`text-white font-bold ${isMobile ? 'text-xl' : 'text-2xl'} leading-tight tracking-tight`}>
         Smart<span style={forgeGradient}>Forge</span>
       </h3>
@@ -75,10 +75,10 @@ const ModulesSection = () => {
   const forgeGradientStr = "linear-gradient(to right, #F99B06 0%, #7F2191 35%, #004AAD 65%, #29D9C2 100%)";
 
   return (
-    <section id="que-es" className="relative text-center overflow-hidden pt-24 -pb-4 lg:pb-24 bg-[#030b1a]">
+    <section id="que-es" className="relative text-center overflow-hidden pt-24 pb-8 lg:pb-12 bg-[#030b1a]">
       
       {/* HEADER */}
-      <div className="max-w-5xl mx-auto px-6 relative z-30 mb-2">
+      <div className="max-w-5xl mx-auto px-6 relative z-30 mb-8">
         <p className="text-[#29D9C2] text-xs tracking-[0.40em] uppercase mb-4 opacity-80 font-extrabold">[ QUÉ ES SMARTFORGE ]</p>
         <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight">
           De la idea al <br className="hidden sm:block" />código probado.
@@ -88,28 +88,28 @@ const ModulesSection = () => {
         </h3>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center min-h-0 lg:min-h-[750px]">
+      <div className="relative flex flex-col items-center justify-center min-h-fit">
         
         {/* BACKGROUND */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
           <img
             src={modulesImage}
             alt=""
-            className="w-full max-w-[1250px] opacity-20 sm:opacity-30 mix-blend-lighten brightness-125 scale-125 sm:scale-110"
+            className="w-full max-w-[1250px] opacity-20 sm:opacity-30 mix-blend-lighten brightness-125 scale-105"
           />
         </div>
 
         {/* DESKTOP */}
-        <div className="hidden lg:flex flex-row justify-center items-center gap-8 xl:gap-12 z-20 w-full px-4 -mt-32">
+        <div className="hidden lg:flex flex-row justify-center items-stretch gap-6 xl:gap-8 z-20 w-full px-4 mt-8">
           {modules.map((card) => (
             <div
               key={card.id}
-              className="p-[1px] rounded-[2rem] transition-all duration-500 group hover:scale-[1.05] hover:-translate-y-4 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+              className="p-[1px] rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
               style={{ background: forgeGradientStr }}
             >
               <div 
                 className="h-full rounded-[1.9rem] flex flex-col text-left bg-[#030b1a]/90 backdrop-blur-3xl p-8"
-                style={{ width: '285px', minHeight: '400px' }}
+                style={{ width: '280px' }}
               >
                 <div className="mb-4">
                   <span className="px-3 py-1 border border-white/10 bg-white/5 rounded-full text-white text-[9px] font-bold uppercase tracking-widest">
@@ -119,18 +119,18 @@ const ModulesSection = () => {
 
                 <StyledTitle title={card.title} />
 
-                <div className="min-h-[88px] mb-6">
-                  {/* CAMBIO: text-white con opacidad para legibilidad */}
+                {/* Altura de descripción ajustada para acercar la línea */}
+                <div className="min-h-[80px] mb-4 mt-2">
                   <p className="text-white text-xs leading-relaxed opacity-90">
                     {card.description}
                   </p>
                 </div>
 
-                <ul className="text-white space-y-2.5 border-t border-white/10 pt-6 mt-auto min-h-[140px]">
+                {/* Lista de items con altura uniforme */}
+                <ul className="text-white space-y-2.5 border-t border-white/10 pt-6 mt-auto min-h-[160px]">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-[12px] flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_5px_#22d3ee]" />
-                      {/* CAMBIO: text-white */}
                       <span className="text-white opacity-90">{item}</span>
                     </li>
                   ))}
@@ -141,14 +141,14 @@ const ModulesSection = () => {
         </div>
 
         {/* MOBILE */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 lg:hidden relative z-20 w-full max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 lg:hidden relative z-20 w-full max-w-4xl mx-auto mt-6">
           {modules.map((card) => (
             <div 
               key={`mob-${card.id}`} 
               className="p-[1px] rounded-[2rem] w-full shadow-lg" 
               style={{ background: forgeGradientStr }}
             >
-              <div className="w-full text-left rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl p-7 pb-6 sm:p-8 sm:pb-8 h-full">
+              <div className="w-full text-left rounded-[1.9rem] flex flex-col bg-[#030b1a]/95 backdrop-blur-xl p-7 pb-8 h-full">
                 <div className="flex justify-between items-center mb-6">
                   <span className="px-3 py-1 rounded-full border border-white/10 bg-white/10 text-white text-[10px] font-bold uppercase tracking-wider">
                     {card.module}
@@ -157,18 +157,16 @@ const ModulesSection = () => {
                 
                 <StyledTitle title={card.title} isMobile={true} />
 
-                <div className="min-h-[100px] sm:min-h-[120px] mb-4">
-                  {/* CAMBIO: text-white */}
+                <div className="min-h-[80px] mb-4 mt-2">
                   <p className="text-white text-sm leading-relaxed opacity-90">
                     {card.description}
                   </p>
                 </div>
 
-                <ul className="space-y-3 border-t border-white/10 pt-5 mt-auto min-h-[140px]">
+                <ul className="space-y-3 border-t border-white/10 pt-5 mt-auto min-h-[150px]">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-white text-[13px] flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
-                      {/* CAMBIO: text-white */}
                       <span className="text-white opacity-90">{item}</span>
                     </li>
                   ))}

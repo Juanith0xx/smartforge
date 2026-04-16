@@ -86,7 +86,7 @@ const ContactFormSection = () => {
   return (
     <section
       id="formulario"
-      className="py-16 md:py-24 relative bg-cover bg-center"
+      className="py-16 md:py-14 relative bg-cover bg-center"
       style={{ backgroundImage: `url(${bgGrid})` }}
     >
 

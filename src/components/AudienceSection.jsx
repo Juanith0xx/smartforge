@@ -36,18 +36,18 @@ const AudienceSection = () => {
   return (
     <section
       id="para-quien"
-      className="py-12 relative overflow-hidden"
+      className="py-12 relative overflow-hidden bg-[#020617]"
     >
       <div className="max-w-[1300px] mx-auto px-6">
 
         {/* HEADER */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-20">
           <div>
-            <p className="text-cyan-400 text-xs tracking-[0.35em] uppercase mb-6">
+            <p className="text-[#29D9C2] text-[10px] tracking-[0.40em] font-extrabold uppercase mb-6">
               [ PARA QUIÉN ES ]
             </p>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               Diseñado para quienes
               <br />
               toman decisiones.
@@ -70,7 +70,6 @@ const AudienceSection = () => {
                 text-white font-semibold
                 bg-gradient-to-r from-cyan-500 to-teal-400
                 shadow-[0_0_25px_rgba(34,211,238,0.45)]
-                hover:scale-105
                 transition-all duration-300
               "
             >
@@ -90,14 +89,10 @@ const AudienceSection = () => {
               className="
                 p-8
                 rounded-xl
-                border border-white/10
+                /* Borde cian permanente con opacidad suave */
+                border border-cyan-400/40
                 backdrop-blur-sm
                 bg-black/40
-                transition-all duration-300
-                hover:border-cyan-400
-                hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]
-                hover:-translate-y-2
-                /* 1. Hacemos que la card sea un contenedor Flex vertical */
                 flex flex-col
               "
             >
@@ -115,7 +110,6 @@ const AudienceSection = () => {
               </h3>
 
               {/* texto */}
-              {/* 2. flex-grow hace que el texto use el espacio sobrante, empujando la imagen al fondo */}
               <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                 {card.text}
               </p>
@@ -124,11 +118,7 @@ const AudienceSection = () => {
               <div className="overflow-hidden rounded-lg">
                 <img
                   src={card.image}
-                  /* 3. h-52 fija la altura (puedes usar h-48 si la quieres más baja).
-                    4. object-cover evita que se deforme.
-                    5. transition-transform para un efecto pro al pasar el mouse.
-                  */
-                  className="w-full h-52 object-cover object-center transition-transform duration-500 hover:scale-110"
+                  className="w-full h-52 object-cover object-center"
                   alt={card.title}
                 />
               </div>
@@ -140,4 +130,4 @@ const AudienceSection = () => {
   )
 }
 
-export default AudienceSection
+export default AudienceSection;
