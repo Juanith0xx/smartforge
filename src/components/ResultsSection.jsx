@@ -32,7 +32,7 @@ const features = [
 
 const ResultsSection = () => {
   return (
-    <section className="pt-12 md:pt-16 pb-24 relative overflow-hidden flex flex-col bg-[#020617]">
+    <section className="pt-12 md:pt-8 pb-24 relative overflow-hidden flex flex-col bg-[#020617]">
 
       {/* CONTENIDO PRINCIPAL */}
       <div className="max-w-[1500px] mx-auto px-6 text-center relative z-10">

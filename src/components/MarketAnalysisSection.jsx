@@ -35,7 +35,7 @@ const problems = [
 
 const MarketAnalysisSection = () => {
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden bg-[#020617]">
+    <section className="py-20 md:py-20 relative overflow-hidden bg-[#020617]">
       <div className="max-w-[1400px] mx-auto px-6 text-center relative z-10">
         
         <p className="text-[#29D9C2] text-[10px] md:text-xs tracking-[0.40em] uppercase mb-6 font-extrabold opacity-80">
@@ -85,6 +85,7 @@ const ProblemCard = ({ problem }) => {
       backdrop-blur-sm
       flex flex-col
       h-full
+      border border-cyan-300 
       ${textAlignClasses[position]}
       `}
     >
@@ -94,7 +95,7 @@ const ProblemCard = ({ problem }) => {
         pointer-events-none z-0
         before:absolute before:inset-0 before:rounded-[32px]
         before:bg-[linear-gradient(135deg,#29D9C2_0%,rgba(98,72,154,0)_45%,rgba(98,72,154,0)_55%,#29D9C2_100%)]
-        before:opacity-40
+        before:opacity-40 
       ">
         <div className="w-full h-full bg-[#050416] rounded-[31px]"></div>
       </div>

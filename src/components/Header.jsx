@@ -42,7 +42,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             <ul className="flex gap-5 xl:gap-10 items-center font-poppins flex-nowrap">
               <li>
-                <a href="#que-es" className="text-[10px] pl-18 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="#que-es" className="text-[10px] pl-12 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
                   Qué es SmartForge
                 </a>
               </li>
@@ -60,28 +60,38 @@ const Header = () => {
 
             {/* BOTONES DE ACCIÓN - flex-shrink-0 para que no pierdan forma */}
             <div className="flex items-center gap-3 xl:gap-4 ml-4 flex-shrink-0">
-              <a
-                href="https://smartjob.cl/"
-                className="
-                  px-4 xl:px-5 py-2
-                  border border-cyan-400
-                  rounded-full
-                  text-[12px] xl:text-sm text-cyan-400
-                  uppercase font-bold whitespace-nowrap
-                  transition-all duration-300
-                  hover:bg-cyan-400/10
-                "
-              >
-                Volver al Sitio
-              </a>
+  <a
+    href="https://smartjob.cl/"
+    className="
+      /* DIMENSIONES FIJAS E IGUALES */
+      w-[160px] xl:w-[190px] h-11
+      flex items-center justify-center
+      
+      border border-cyan-400
+      rounded-full
+      text-[14px] xl:text-xs text-cyan-400
+      uppercase font-bold whitespace-nowrap
+      transition-all duration-300
+      hover:bg-cyan-400/10
+    "
+  >
+    Volver al Sitio
+  </a>
 
-              <a 
-                href="#formulario" 
-                className="sf-btn-secondary px-4 xl:px-6 py-2 text-[12px] xl:text-sm font-bold whitespace-nowrap"
-              >
-                Habla con un Experto
-              </a>
-            </div>
+  <a 
+    href="#formulario" 
+    className="
+      /* DIMENSIONES FIJAS E IGUALES */
+      w-[160px] xl:w-[250px] !h-12
+      flex items-center justify-center
+      
+      text-[8px] xl:text-xs whitespace-nowrap
+      /* Nota: Asegúrate que sf-btn-secondary no tenga paddings que fuercen otro ancho */
+    "
+  >
+    Habla con un Experto
+  </a>
+</div>
           </nav>
         </div>
       </header>

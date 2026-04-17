@@ -4,10 +4,10 @@ import heroLeft from "../assets/images/Cerebro.png"
 
 const Hero = () => {
   return (
-    <section className="sf-hero py-10 overflow-hidden" id="inicio">
+    <section className="sf-hero py-8 overflow-hidden" id="inicio">
 
     {/* TEXTO SUPERIOR - Optimizado para una sola línea en móvil */}
-<p className="flex flex-nowrap items-center justify-center text-center text-[10px] pb-6 sm:text-base tracking-[0.2em] sm:tracking-[0.35em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
+<p className="flex flex-nowrap items-center justify-center text-center text-[10px] pb-6 sm:text-base tracking-[0.2em] sm:tracking-[0.30em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
   <span>Fábrica de software con IA</span>
   <span className="mx-3 sm:mx-4 text-white font-bold text-sm">+</span>
   <span>Supervisión experta</span>
@@ -108,13 +108,13 @@ const Hero = () => {
       </div>
 
       {/* BARRA DE MÉTRICAS */}
-      <div className="max-w-[1200px] mx-auto mt-2 px-6">
+      <div className="max-w-[1200px] mx-auto -mt-18 px-6">
 
         <div className="
           grid grid-cols-2 md:grid-cols-4
           text-center
           rounded-2xl
-          px-8 py-10
+          px-8 py-8
           text-white
           /* GRADIENTE VERTICAL SEGÚN ESPECIFICACIÓN */
           bg-[linear-gradient(180deg,#004AAD_0%,#0097B2_31%,#29D9C2_100%)]
