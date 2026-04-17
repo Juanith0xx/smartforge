@@ -180,7 +180,7 @@ const ContactFormSection = () => {
 
             <img
               src={logo}
-              className="w-76 md:w-72 mb-10 scale-150"
+              className="w-40 md:w-72 mb-10 scale-150"
               alt=""
             />
 

@@ -22,7 +22,7 @@ const Header = () => {
             href="#inicio" 
             className="z-[120] transition-all duration-300 hover:opacity-80 active:scale-95 flex-shrink-0"
           >
-            <img src={logo} alt="SmartForge" className="h-25 md:h-16 lg:h-22 w-auto object-contain" />
+            <img src={logo} alt="SmartForge" className="h-25 md:h-16 lg:h-26 w-auto object-contain" />
           </a>
 
           {/* BOTÓN HAMBURGUESA */}
@@ -37,7 +37,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-4 xl:gap-5 mr-10">
             <ul className="flex gap-5 xl:gap-10 items-center font-poppins flex-nowrap">
               <li>
-                <a href="#que-es" className="text-[10px] pl-10 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="#que-es" className="text-[10px] xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
                   Qué es SmartForge
                 </a>
               </li>
