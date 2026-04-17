@@ -22,7 +22,7 @@ const Header = () => {
             href="#inicio" 
             className="z-[120] transition-all duration-300 hover:opacity-80 active:scale-95 flex-shrink-0"
           >
-            <img src={logo} alt="SmartForge" className="h-19 md:h-16 lg:h-20 w-auto object-contain" />
+            <img src={logo} alt="SmartForge" className="h-25 md:h-16 lg:h-28 w-auto object-contain" />
           </a>
 
           {/* BOTÓN HAMBURGUESA */}
