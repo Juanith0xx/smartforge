@@ -35,7 +35,7 @@ const Header = () => {
           </button>
 
           {/* NAVEGACIÓN DESKTOP */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-5 mr-10">
             <ul className="flex gap-5 xl:gap-10 items-center font-poppins flex-nowrap">
               <li>
                 <a href="#que-es" className="text-[10px] xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
@@ -55,7 +55,7 @@ const Header = () => {
             </ul>
 
             {/* BOTONES DE ACCIÓN */}
-            <div className="flex items-center gap-3 xl:gap-4 ml-4 flex-shrink-0">
+            <div className="flex items-center gap-3 xl:gap-4 ml-3 flex-shrink-0">
               <a
                 href="https://smartjob.cl/"
                 className="px-4 xl:px-5 py-2 border border-cyan-400 rounded-full text-[12px] xl:text-sm text-cyan-400 uppercase font-bold whitespace-nowrap transition-all duration-300 hover:bg-cyan-400/10"
@@ -65,7 +65,7 @@ const Header = () => {
 
               <a 
                 href="#formulario" 
-                className="sf-btn-secondary px-4 xl:px-6 py-2 text-[12px] xl:text-sm font-bold whitespace-nowrap bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full text-white"
+                className="px-4 xl:px-6 py-2 text-[12px] xl:text-sm font-bold whitespace-nowrap border border-white rounded-full text-white"
               >
                 Habla con un Experto
               </a>
