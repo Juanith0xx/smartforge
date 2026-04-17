@@ -42,7 +42,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             <ul className="flex gap-5 xl:gap-10 items-center font-poppins flex-nowrap">
               <li>
-                <a href="#que-es" className="text-[10px] pl-18 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="#que-es" className="text-[10px] pl-10 xl:text-sm text-white hover:text-cyan-400 transition-colors whitespace-nowrap">
                   Qué es SmartForge
                 </a>
               </li>
@@ -59,7 +59,7 @@ const Header = () => {
             </ul>
 
             {/* BOTONES DE ACCIÓN - flex-shrink-0 para que no pierdan forma */}
-            <div className="flex items-center gap-3 xl:gap-4 ml-4 flex-shrink-0">
+            <div className="flex items-center gap-3 xl:gap-4 ml-2 flex-shrink-0">
               <a
                 href="https://smartjob.cl/"
                 className="
