@@ -15,14 +15,14 @@ const Header = () => {
     <>
       {/* HEADER PRINCIPAL */}
       <header className="sf-header font-poppins fixed top-0 left-0 w-full z-[120] bg-[#020617]/95 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between -pl-10 gap-8 xl:gap-12">
+        <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between gap-8 xl:gap-12">
           
           {/* LOGO */}
           <a 
             href="#inicio" 
             className="z-[120] transition-all duration-300 hover:opacity-80 active:scale-95 flex-shrink-0"
           >
-            <img src={logo} alt="SmartForge" className="h-25 md:h-16 lg:h-28 w-auto object-contain" />
+            <img src={logo} alt="SmartForge" className="h-25 md:h-16 lg:h-22 w-auto object-contain" />
           </a>
 
           {/* BOTÓN HAMBURGUESA */}

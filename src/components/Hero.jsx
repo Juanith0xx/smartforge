@@ -4,7 +4,7 @@ import heroLeft from "../assets/images/Cerebro.png"
 
 const Hero = () => {
   return (
-    <section className="sf-hero py-8 overflow-hidden" id="inicio">
+    <section className="sf-hero py-8 overflow-hidden " id="inicio">
 
 {/* TEXTO SUPERIOR - Versión Móvil Optimizada */}
 <p className="
