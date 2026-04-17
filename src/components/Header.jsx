@@ -15,7 +15,7 @@ const Header = () => {
     <>
       {/* HEADER PRINCIPAL */}
       <header className="sf-header font-poppins fixed top-0 left-0 w-full z-[120] bg-[#020617]/95 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-start gap-8 xl:gap-12">
+        <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between -pl-10 gap-8 xl:gap-12">
           
           {/* LOGO */}
           <a 
