@@ -36,14 +36,14 @@ const AudienceSection = () => {
   return (
     <section
       id="para-quien"
-      className="py-12 relative overflow-hidden bg-[#020617]"
+      className="py-1 relative overflow-hidden bg-[#020617]"
     >
       <div className="max-w-[1300px] mx-auto px-6">
 
         {/* HEADER */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-20">
           <div>
-            <p className="text-[#29D9C2] text-[10px] tracking-[0.40em] font-extrabold uppercase mb-6">
+            <p className="text-[#29D9C2] text-[12px] tracking-[0.40em] font-extrabold uppercase mb-6">
               [ PARA QUIÉN ES ]
             </p>
 

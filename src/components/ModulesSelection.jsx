@@ -75,7 +75,7 @@ const ModulesSection = () => {
   const forgeGradientStr = "linear-gradient(to right, #F99B06 0%, #7F2191 35%, #004AAD 65%, #29D9C2 100%)";
 
   return (
-    <section id="que-es" className="relative text-center overflow-hidden pt-24 pb-8 lg:pb-12 bg-[#030b1a]">
+    <section id="que-es" className="relative text-center overflow-hidden pt-10 pb-8 lg:pb-12 bg-[#030b1a]">
       
       {/* HEADER */}
       <div className="max-w-5xl mx-auto px-6 relative z-30 mb-8">
@@ -95,7 +95,7 @@ const ModulesSection = () => {
           <img
             src={modulesImage}
             alt=""
-            className="w-full max-w-[1250px] opacity-20 sm:opacity-30 mix-blend-lighten brightness-125 scale-105"
+            className="w-full max-w-[1250px] opacity-20 sm:opacity-30 mix-blend-lighten brightness-125 scale-165"
           />
         </div>
 
@@ -120,14 +120,14 @@ const ModulesSection = () => {
                 <StyledTitle title={card.title} />
 
                 {/* Altura de descripción ajustada para acercar la línea */}
-                <div className="min-h-[80px] mb-4 mt-2">
+                <div className="min-h-[80px] mb-1 mt-2">
                   <p className="text-white text-xs leading-relaxed opacity-90">
                     {card.description}
                   </p>
                 </div>
 
                 {/* Lista de items con altura uniforme */}
-                <ul className="text-white space-y-2.5 border-t border-white/10 pt-6 mt-auto min-h-[160px]">
+                <ul className="text-white space-y-2.5 border-t border-white/10 pt-4 mt-auto min-h-[160px]">
                   {card.items.map((item, i) => (
                     <li key={i} className="text-[12px] flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0 shadow-[0_0_5px_#22d3ee]" />

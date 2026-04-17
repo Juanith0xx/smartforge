@@ -30,7 +30,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="como-funciona" className="relative overflow-hidden bg-[#020617] pt-24 pb-12 lg:pb-16">
+    <section id="como-funciona" className="relative overflow-hidden bg-[#020617] pt-12 pb-12 lg:pb-16">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
         {/* CONTENEDOR CENTRADO */}
