@@ -6,10 +6,26 @@ const Hero = () => {
   return (
     <section className="sf-hero py-8 overflow-hidden" id="inicio">
 
-    {/* TEXTO SUPERIOR - Optimizado para una sola línea en móvil */}
-<p className="flex flex-nowrap items-center justify-center text-center text-[10px] pb-6 sm:text-base tracking-[0.2em] sm:tracking-[0.30em] uppercase text-gray-300 mt-16 -mb-10 whitespace-nowrap">
+{/* TEXTO SUPERIOR - Versión Móvil Optimizada */}
+<p className="
+  /* Flex y Alineación */
+  flex flex-nowrap items-center justify-center text-center 
+  /* Tipografía: Un poco más pequeña en móvil para asegurar una sola línea */
+  text-[10.5px] sm:text-base 
+  /* Espaciado de letras: Reducido en móvil para evitar desborde */
+  tracking-[0.10em] sm:tracking-[0.30em] 
+  uppercase text-gray-400 whitespace-nowrap px-4
+  /* Márgenes: Eliminamos el negativo en móvil para dar espacio a la imagen */
+  mt-4 mb-4 md:mt-16 md:-mb-10 
+  pb-4 sm:pb-6
+">
   <span>Fábrica de software con IA</span>
-  <span className="mx-3 sm:mx-4 text-white font-bold text-sm">+</span>
+  
+  {/* El signo + con color de énfasis para resaltar la unión */}
+  <span className="mx-2 sm:mx-4 font-bold text-xs sm:text-sm">
+    +
+  </span>
+  
   <span>Supervisión experta</span>
 </p>
       {/* GRID PRINCIPAL */}
@@ -108,7 +124,7 @@ const Hero = () => {
       </div>
 
       {/* BARRA DE MÉTRICAS */}
-      <div className="max-w-[1200px] mx-auto -mt-18 px-6">
+      <div className="max-w-[1200px] mx-auto mt-12 md:-mt-18 px-2 md:px-6">
 
         <div className="
           grid grid-cols-2 md:grid-cols-4

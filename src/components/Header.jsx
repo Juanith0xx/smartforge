@@ -20,9 +20,9 @@ const Header = () => {
           {/* LOGO */}
           <a 
             href="#inicio" 
-            className="z-[130] transition-all duration-300 hover:opacity-80 active:scale-95 flex-shrink-0"
+            className="z-[120] transition-all duration-300 hover:opacity-80 active:scale-95 flex-shrink-0"
           >
-            <img src={logo} alt="SmartForge" className="h-12 md:h-16 lg:h-20 w-auto object-contain" />
+            <img src={logo} alt="SmartForge" className="h-19 md:h-16 lg:h-20 w-auto object-contain" />
           </a>
 
           {/* BOTÓN HAMBURGUESA */}
@@ -81,7 +81,7 @@ const Header = () => {
       `}>
         <nav className="flex-grow flex flex-col items-center justify-center px-8">
           <ul className="w-full flex flex-col gap-2 text-center">
-            <li className="mb-8">
+            <li className="mb-4">
               <a href="https://smartjob.cl/" onClick={toggleMenu} className="inline-block py-3 px-8 text-sm text-cyan-400 border border-cyan-400 rounded-full uppercase font-bold">
                 Volver al Sitio
               </a>
