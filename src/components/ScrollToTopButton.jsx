@@ -11,11 +11,7 @@ const ScrollToTopButton = () => {
       const windowHeight = window.innerHeight
       const documentHeight = document.documentElement.scrollHeight
 
-      // Mostrar botón después de 500px de scroll
       setVisible(scrollTop > 500)
-
-      // Si estamos cerca del final (menos de 100px para llegar), cambiamos a modo "subir"
-      // Si no, el botón indicará "bajar"
       setAtBottom(scrollTop + windowHeight >= documentHeight - 100)
     }
 
@@ -25,13 +21,11 @@ const ScrollToTopButton = () => {
 
   const handleAction = () => {
     if (atBottom) {
-      // Si está en el fondo, sube al inicio
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       })
     } else {
-      // Si no está en el fondo, baja hasta el final
       window.scrollTo({
         top: document.documentElement.scrollHeight,
         behavior: "smooth"
