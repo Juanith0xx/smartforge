@@ -4,6 +4,13 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 1400px) {
+  header > div {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
 /**
  * SmartForge — Estilos globales para WordPress / Elementor
  * =========================================================
